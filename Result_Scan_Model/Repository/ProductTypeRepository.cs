@@ -56,7 +56,7 @@ namespace Result_Scan_Model.Repository
                     return product;
                 }
             }
-            return null;
+            return new ProductTypeModel();
         }
     }
 }

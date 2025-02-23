@@ -1,6 +1,6 @@
 ﻿namespace Result_Scan_Model.View
 {
-    public interface ISidebarView
+    public interface IMainView
     {
         event EventHandler MaximizeClicked;
         event EventHandler MinimizeClicked;

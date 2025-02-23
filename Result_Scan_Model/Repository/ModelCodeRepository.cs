@@ -58,7 +58,7 @@ namespace Result_Scan_Model.Repository
                     };
                 }
             }
-            return modelCode;
+            return modelCode = new ModelCodeModel();
         }
     }
 }

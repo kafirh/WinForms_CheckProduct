@@ -7,7 +7,7 @@ using Result_Scan_Model.Service;
 
 namespace Result_Scan_Model
 {
-    public partial class Sidebar : Form, ISidebarView
+    public partial class MainView : Form, IMainView
     {
         public event EventHandler MaximizeClicked;
         public event EventHandler MinimizeClicked;
@@ -15,12 +15,12 @@ namespace Result_Scan_Model
         public event EventHandler<string> ViewChanged; // Event untuk ubah tampilan
         private Form overlayForm;
 
-        private SidebarPresenter _presenter;
+        private MainPresenter _presenter;
 
-        public Sidebar()
+        public MainView()
         {
             InitializeComponent();
-            _presenter = new SidebarPresenter(this, new SidebarModel());
+            _presenter = new MainPresenter(this, new SidebarModel());
 
             // Set default view ke ScanView (dengan pengecekan null)
             ViewChanged?.Invoke(this, "Scan");
@@ -82,7 +82,7 @@ namespace Result_Scan_Model
             form.Show();
             FadeInForm(form);
 
-            Setting settingView = new Setting
+            SettingView settingView = new SettingView(this)
             {
                 StartPosition = FormStartPosition.CenterScreen
             };

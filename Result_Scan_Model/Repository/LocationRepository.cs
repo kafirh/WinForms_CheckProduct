@@ -56,7 +56,7 @@ namespace Result_Scan_Model.Repository
                     return location;
                 }
             }
-            return null;
+            return new LocationModel();
         }
     }
 }

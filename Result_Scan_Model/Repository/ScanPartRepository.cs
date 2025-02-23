@@ -36,7 +36,7 @@ namespace Result_Scan_Model.Repository
                     };
                 }
             }
-            return model;
+            return model = new ScanPartModel();
 
         }
     }

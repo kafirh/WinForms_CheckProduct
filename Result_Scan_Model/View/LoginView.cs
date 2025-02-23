@@ -74,7 +74,7 @@ namespace Result_Scan_Model.View
         public void ShowMain()
         {
             this.Hide();
-            Sidebar mainView = new Sidebar();
+            MainView mainView = new MainView();
             mainView.ShowDialog();
             this.Close();
         }

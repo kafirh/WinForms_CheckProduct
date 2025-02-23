@@ -4,7 +4,6 @@ D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\bin\Debug\net8.0-win
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\bin\Debug\net8.0-windows\Result_Scan_Model.dll
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\bin\Debug\net8.0-windows\Result_Scan_Model.pdb
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.Properties.Resources.resources
-D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.Sidebar.resources
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.csproj.GenerateResource.cache
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.GeneratedMSBuildEditorConfig.editorconfig
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.AssemblyInfoInputs.cache
@@ -68,4 +67,6 @@ D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\bin\Debug\net8.0-win
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_S.D0F937B0.Up2Date
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
 D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.View.LoginView.resources
-D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.View.Setting.resources
+D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.MainView.resources
+D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.View.SettingView.resources
+D:\visual_basic_belajar\Result_Scan_Model\Result_Scan_Model\obj\Debug\net8.0-windows\Result_Scan_Model.sourcelink.json

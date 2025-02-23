@@ -6,17 +6,17 @@ using System.Windows.Forms;
 
 namespace Result_Scan_Model.Presenter
 {
-    public class SidebarPresenter : IDisposable
+    public class MainPresenter : IDisposable
     {
-        private readonly WeakReference<ISidebarView> _viewRef;
+        private readonly WeakReference<IMainView> _viewRef;
         private readonly SidebarModel _model;
 
         private readonly Dictionary<string, UserControl> _views;
         private string _currentViewKey;
 
-        public SidebarPresenter(ISidebarView view, SidebarModel model)
+        public MainPresenter(IMainView view, SidebarModel model)
         {
-            _viewRef = new WeakReference<ISidebarView>(view);
+            _viewRef = new WeakReference<IMainView>(view);
             _model = model;
 
             // Inisialisasi View Dictionary

@@ -1,7 +1,7 @@
 ﻿
 namespace Result_Scan_Model
 {
-    partial class Sidebar
+    partial class MainView
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace Result_Scan_Model
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sidebar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
             Maximizeimg = new PictureBox();
             Minimizeimg = new PictureBox();
