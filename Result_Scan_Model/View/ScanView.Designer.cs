@@ -1,4 +1,6 @@
-﻿namespace Result_Scan_Model.View
+﻿using System.Diagnostics;
+
+namespace Result_Scan_Model.View
 {
     partial class ScanView
     {
@@ -13,9 +15,14 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                MessageBox.Show("Disposing scanview");
+                _presenter.StopListening();
+                if (components != null)
+                {
+                    components.Dispose();
+                }
             }
             base.Dispose(disposing);
         }
@@ -47,9 +54,9 @@
             btnClear = new Button();
             btnManual = new Button();
             tableLayoutInput = new TableLayoutPanel();
+            txtScanPartCode = new TextBox();
             txtPartNumberId = new TextBox();
             lblPartNumberId = new Label();
-            txtScanPartCode = new TextBox();
             tableLayoutOK_NG = new TableLayoutPanel();
             labelNG = new Label();
             tableLayoutView.SuspendLayout();
@@ -171,9 +178,9 @@
             labelOK.Cursor = Cursors.No;
             labelOK.FlatStyle = FlatStyle.Popup;
             labelOK.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelOK.Location = new Point(208, 115);
+            labelOK.Location = new Point(158, 57);
             labelOK.Name = "labelOK";
-            labelOK.Size = new Size(175, 175);
+            labelOK.Size = new Size(275, 290);
             labelOK.TabIndex = 15;
             labelOK.Text = "OK";
             labelOK.TextAlign = ContentAlignment.MiddleCenter;
@@ -327,6 +334,18 @@
             tableLayoutInput.Size = new Size(794, 352);
             tableLayoutInput.TabIndex = 18;
             // 
+            // txtScanPartCode
+            // 
+            txtScanPartCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtScanPartCode.Font = new Font("Arial", 14F);
+            txtScanPartCode.Location = new Point(291, 12);
+            txtScanPartCode.Name = "txtScanPartCode";
+            txtScanPartCode.PlaceholderText = "Input Scan";
+            txtScanPartCode.ReadOnly = true;
+            txtScanPartCode.Size = new Size(500, 34);
+            txtScanPartCode.TabIndex = 1;
+            txtScanPartCode.KeyDown += txtScanPartCode_KeyDown;
+            // 
             // txtPartNumberId
             // 
             txtPartNumberId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -348,18 +367,6 @@
             lblPartNumberId.TabIndex = 12;
             lblPartNumberId.Text = "Part Number Id";
             lblPartNumberId.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // txtScanPartCode
-            // 
-            txtScanPartCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtScanPartCode.Font = new Font("Arial", 14F);
-            txtScanPartCode.Location = new Point(291, 12);
-            txtScanPartCode.Name = "txtScanPartCode";
-            txtScanPartCode.PlaceholderText = "Input Scan";
-            txtScanPartCode.ReadOnly = true;
-            txtScanPartCode.Size = new Size(500, 34);
-            txtScanPartCode.TabIndex = 1;
-            txtScanPartCode.TextChanged += txtScanPartCode_TextChanged_1;
             // 
             // tableLayoutOK_NG
             // 
@@ -384,9 +391,9 @@
             labelNG.Cursor = Cursors.No;
             labelNG.FlatStyle = FlatStyle.Popup;
             labelNG.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelNG.Location = new Point(799, 115);
+            labelNG.Location = new Point(749, 57);
             labelNG.Name = "labelNG";
-            labelNG.Size = new Size(175, 175);
+            labelNG.Size = new Size(275, 290);
             labelNG.TabIndex = 16;
             labelNG.Text = "NG";
             labelNG.TextAlign = ContentAlignment.MiddleCenter;

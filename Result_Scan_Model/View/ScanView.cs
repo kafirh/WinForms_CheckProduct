@@ -22,7 +22,6 @@ namespace Result_Scan_Model.View
 
             _presenter = new ScanPresenter(this);
 
-
             // Timer untuk update waktu setiap detik
             timer = new System.Windows.Forms.Timer
             {
@@ -34,11 +33,12 @@ namespace Result_Scan_Model.View
             cbModelNumber.SelectedIndexChanged += CbModelNumber_SelectedIndexChanged; // Menambahkan event handler
         }
 
-        private void ScanView_Load(object sender, EventArgs e)
+        private async void ScanView_Load(object sender, EventArgs e)
         {
             txtInspector.Text = SessionManager.CurrentUser?.Name ?? "";
             timer.Start();
             _presenter.UpdateCurrentTime();
+            await _presenter.StartListeningAsync();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -55,21 +55,26 @@ namespace Result_Scan_Model.View
         private void CbModelNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Pastikan ada pilihan yang dipilih
-            if (cbModelNumber.SelectedValue != null)
+            if (cbModelNumber.DataSource == null || cbModelNumber.SelectedIndex == -1)
+                return; // Jangan lanjut jika data belum siap
+
+            string selectedModelCodeId = cbModelNumber.SelectedValue?.ToString();
+            if (!string.IsNullOrEmpty(selectedModelCodeId))
             {
-                // Ambil ModelCodeId yang dipilih
-                string selectedModelCodeId = cbModelNumber.SelectedValue.ToString();
-
-                // Kirim ke presenter untuk memuat data part numbers berdasarkan ModelCodeId yang dipilih
                 _presenter.DisplayData(selectedModelCodeId);
-                if (txtScanPartCode.Text != "")
+
+                if (!string.IsNullOrWhiteSpace(txtScanPartCode.Text) && !string.IsNullOrWhiteSpace(txtPartNumberId.Text))
                 {
-                    string inputScan = txtScanPartCode.Text.ToString();
-                    string partNumberId = txtPartNumberId.Text.ToString();
+                    ResultScanModel model = new ResultScanModel
+                    {
+                        ScanResult = txtScanPartCode.Text,
+                        ModelCodeId = selectedModelCodeId,
+                        PartMotorWashId = txtPartNumberId.Text,
+                        DateTime = DateTime.Now
+                    };
 
-                    _presenter.DisplayOKNG(inputScan, partNumberId);
+                    _presenter.DisplayOKNG(model);
                 }
-
             }
         }
 
@@ -83,13 +88,10 @@ namespace Result_Scan_Model.View
         }
         public void SetDisplay(PartMotorWashModel model)
         {
-            // Pastikan SetDisplay hanya dipanggil jika ModelNumber telah dipilih
-            if (cbModelNumber.SelectedIndex != -1)
-            {
-                // Update tampilan berdasarkan data dari partMotorWashModel
-                txtPartNumberId.Text = model.PartNumberId;
-                txtPartNumber.Text = model.PartNumber;
-            }
+            if (model == null || cbModelNumber.SelectedIndex == -1) return; // Hindari error null reference
+
+            txtPartNumberId.Text = model.PartNumberId ?? "";
+            txtPartNumber.Text = model.PartNumber ?? "";
         }
         private void SetLabelOK(bool isActive)
         {
@@ -134,14 +136,32 @@ namespace Result_Scan_Model.View
             }
         }
 
-        private void txtScanPartCode_TextChanged_1(object sender, EventArgs e)
+        private void txtScanPartCode_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtScanPartCode.Text) && !string.IsNullOrWhiteSpace(txtPartNumberId.Text))
+            if (e.KeyCode == Keys.Enter) // Cek jika tombol Enter ditekan
             {
-                string inputScan = txtScanPartCode.Text.ToString();
-                string partNumberId = txtPartNumberId.Text.ToString();
+                e.SuppressKeyPress = true;
+                if (!string.IsNullOrWhiteSpace(txtScanPartCode.Text) && !string.IsNullOrWhiteSpace(txtPartNumberId.Text))
+                {
+                    ResultScanModel model = new ResultScanModel();
+                    model.ScanResult = txtScanPartCode.Text;
+                    model.ModelCodeId = cbModelNumber.SelectedValue.ToString() ?? "";
+                    model.PartMotorWashId = txtPartNumberId.Text;
+                    model.DateTime = DateTime.Now;
 
-                _presenter.DisplayOKNG(inputScan, partNumberId);
+                    _presenter.DisplayOKNG(model);
+                }
+            }
+        }
+        public void UpdateUI1(string data1)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((Action)(() => txtScanPartCode.Text = data1));
+            }
+            else
+            {
+                txtScanPartCode.Text = data1;
             }
         }
     }

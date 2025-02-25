@@ -26,6 +26,12 @@ namespace Result_Scan_Model.View
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.EnableHeadersVisualStyles = false; // Supaya warna header bisa diubah
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Enabled = false;
+            dataGridView1.CurrentCell = null;
+
 
             // Ubah warna header menjadi biru
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
@@ -47,14 +53,20 @@ namespace Result_Scan_Model.View
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                HeaderText = "Model Number",
-                DataPropertyName = "ModelNumber",
+                HeaderText = "Scan",
+                DataPropertyName = "ScanResult",
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Part Motor Washes",
                 DataPropertyName = "PartMotorWash",
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Model Number",
+                DataPropertyName = "ModelNumber",
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
@@ -97,6 +109,8 @@ namespace Result_Scan_Model.View
                     foreach (DataGridViewCell cell in dataGridView1.Rows[e.RowIndex].Cells)
                     {
                         cell.Style.BackColor = rowColor;
+                        cell.Style.SelectionBackColor = rowColor;
+                        cell.Style.SelectionForeColor = Color.Black;
                     }
                 }
             }
@@ -108,6 +122,7 @@ namespace Result_Scan_Model.View
             var formattedResults = results.Select((r, index) => new
             {
                 No = index + 1,
+                ScanResult = r.ScanResult,
                 ModelNumber = r.ModelCode?.ModelNumber ?? "N/A",
                 PartMotorWash = r.PartMotorWash?.PartNumber ?? "N/A",
                 Location = r.Location?.LocationName ?? "N/A",

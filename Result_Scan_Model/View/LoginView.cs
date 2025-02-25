@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.Logging;
 using Result_Scan_Model.Presenter;
 using Result_Scan_Model.View;
 
@@ -8,7 +9,7 @@ namespace Result_Scan_Model.View
     public partial class LoginView : Form, ILoginView
     {
         private LoginPresenter _presenter;
-        private bool isLoaded = false;
+        private bool isClickedOnce = true;
 
         public LoginView()
         {
@@ -82,6 +83,36 @@ namespace Result_Scan_Model.View
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void hiddenPass_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                hiddenPass.Image = Properties.Resources.show;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                hiddenPass.Image = Properties.Resources.hide;
+                txtPassword.PasswordChar = '*';
+            }
+            hiddenPass.Refresh();
+        }
+        private void txtNIK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(NIK) && !string.IsNullOrWhiteSpace(Password))
+            {
+                _presenter.Login();
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(NIK) && !string.IsNullOrWhiteSpace(Password))
+            {
+                _presenter.Login();
+            }
         }
     }
 }

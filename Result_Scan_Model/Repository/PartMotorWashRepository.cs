@@ -20,7 +20,7 @@ namespace Result_Scan_Model.Repository
 
         public PartMotorWashModel GetPartMotorWash(string partNumberId)
         {
-            PartMotorWashModel model = null;
+            PartMotorWashModel model = new PartMotorWashModel();
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open(); 
@@ -36,7 +36,7 @@ namespace Result_Scan_Model.Repository
                     };
                 }
             }
-            return model = new PartMotorWashModel();
+            return model;
 
         }
     }

@@ -139,12 +139,15 @@
             // 
             hiddenPass.Anchor = AnchorStyles.None;
             hiddenPass.Cursor = Cursors.Hand;
+            hiddenPass.Image = Properties.Resources.show;
+            hiddenPass.InitialImage = (Image)resources.GetObject("hiddenPass.InitialImage");
             hiddenPass.Location = new Point(886, 443);
             hiddenPass.Margin = new Padding(3, 4, 3, 4);
             hiddenPass.Name = "hiddenPass";
             hiddenPass.Size = new Size(40, 41);
             hiddenPass.TabIndex = 18;
             hiddenPass.TabStop = false;
+            hiddenPass.Click += hiddenPass_Click;
             // 
             // txtNIK
             // 
@@ -158,6 +161,7 @@
             txtNIK.PlaceholderText = "NIK";
             txtNIK.Size = new Size(397, 31);
             txtNIK.TabIndex = 13;
+            txtNIK.KeyDown += this.txtNIK_KeyDown;
             // 
             // panel2
             // 
@@ -204,6 +208,7 @@
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(397, 31);
             txtPassword.TabIndex = 14;
+            txtPassword.KeyDown += this.txtPassword_KeyDown;
             // 
             // pictureBox2
             // 
@@ -244,6 +249,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

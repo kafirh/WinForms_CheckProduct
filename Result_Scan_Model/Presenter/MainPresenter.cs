@@ -10,21 +10,12 @@ namespace Result_Scan_Model.Presenter
     {
         private readonly WeakReference<IMainView> _viewRef;
         private readonly SidebarModel _model;
-
-        private readonly Dictionary<string, UserControl> _views;
-        private string _currentViewKey;
+        private UserControl _currentView;
 
         public MainPresenter(IMainView view, SidebarModel model)
         {
             _viewRef = new WeakReference<IMainView>(view);
             _model = model;
-
-            // Inisialisasi View Dictionary
-            _views = new Dictionary<string, UserControl>
-            {
-                { "Scan", new ScanView() },
-                { "Result", new ResultView() },
-            };
 
             // Subscribe event dari View
             view.MaximizeClicked += OnMaximizeClicked;
@@ -37,9 +28,7 @@ namespace Result_Scan_Model.Presenter
             _model.ExitRequested += OnExitRequested;
 
             // Set default view
-            _currentViewKey = "Scan";
-            view.LoadView(_views[_currentViewKey]);
-            view.SetTitle("Scan Page");
+            ChangeView("Scan");
         }
 
         private void OnMaximizeClicked(object sender, EventArgs e) => _model.ToggleMaximize();
@@ -66,19 +55,36 @@ namespace Result_Scan_Model.Presenter
 
         private void OnViewChanged(object sender, string viewName)
         {
-            if (_views.TryGetValue(viewName, out var newView))
+            ChangeView(viewName);
+        }
+
+        private void ChangeView(string viewName)
+        {
+            if (_viewRef.TryGetTarget(out var view))
             {
-                if (_viewRef.TryGetTarget(out var view))
+                // Hapus view sebelumnya jika ada
+                if (_currentView != null)
                 {
-                    view.LoadView(newView);
-                    view.SetTitle(viewName switch
-                    {
-                        "Scan" => "Scan Page",
-                        "Result" => "Scan Record Page",
-                        _ => "Scan Page"
-                    });
-                    _currentViewKey = viewName;
+                    view.RemoveView(_currentView);
+                    _currentView.Dispose();
                 }
+
+                // Buat view baru sesuai dengan nama yang diminta
+                _currentView = viewName switch
+                {
+                    "Scan" => new ScanView(),
+                    "Result" => new ResultView(),
+                    _ => new ScanView()
+                };
+
+                // Load view baru dan set title
+                view.LoadView(_currentView);
+                view.SetTitle(viewName switch
+                {
+                    "Scan" => "Scan Page",
+                    "Result" => "Scan Record Page",
+                    _ => "Scan Page"
+                });
             }
         }
 
@@ -96,15 +102,12 @@ namespace Result_Scan_Model.Presenter
             _model.StateChanged -= OnStateChanged;
             _model.ExitRequested -= OnExitRequested;
 
-            // Dispose semua view dalam dictionary
-            foreach (var kvp in _views)
+            // Dispose view yang sedang aktif
+            if (_currentView is IDisposable disposableView)
             {
-                if (kvp.Value is IDisposable disposableView)
-                {
-                    disposableView.Dispose();
-                }
+                disposableView.Dispose();
             }
-            _views.Clear();
+            _currentView = null;
         }
     }
 }

@@ -10,5 +10,6 @@ namespace Result_Scan_Model.View
         void LoadData();
         void SetDisplay(PartMotorWashModel model);
         void SetOKNG(bool ok);
+        void UpdateUI1(string data1);
     }
 }

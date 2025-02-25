@@ -27,7 +27,7 @@ namespace Result_Scan_Model
 
             // Pastikan panelContainer mengisi penuh form
             panelView.Dock = DockStyle.Fill;
-            lblUser.Text = "HALO " + (SessionManager.CurrentUser?.Name ?? "User");
+            lblUser.Text = "HALO," + (SessionManager.CurrentUser?.Name ?? "User");
 
             // Tambahkan event Resize untuk memastikan view selalu menyesuaikan ukuran
             panelView.Resize += (s, e) => ResizeView();
@@ -42,6 +42,15 @@ namespace Result_Scan_Model
             view.Dock = DockStyle.Fill;
             panelView.Controls.Add(view);
         }
+        public void RemoveView(UserControl view)
+        {
+            if (view != null && Controls.Contains(view))
+            {
+                panelView.Controls.Remove(view);
+                view.Dispose(); // Pastikan view dihapus dari memori
+            }
+        }
+
 
         public void SetTitle(string title) => labelTitle.Text = title;
 

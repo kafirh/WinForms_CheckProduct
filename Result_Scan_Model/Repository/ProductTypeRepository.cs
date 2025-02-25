@@ -40,6 +40,7 @@ namespace Result_Scan_Model.Repository
 
         public ProductTypeModel GetProduct(int id)
         {
+            ProductTypeModel product = new ProductTypeModel();
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
@@ -48,7 +49,7 @@ namespace Result_Scan_Model.Repository
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    ProductTypeModel product = new ProductTypeModel
+                    product = new ProductTypeModel
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         ProductName = reader["ProductName"].ToString()
@@ -56,7 +57,7 @@ namespace Result_Scan_Model.Repository
                     return product;
                 }
             }
-            return new ProductTypeModel();
+            return product;
         }
     }
 }

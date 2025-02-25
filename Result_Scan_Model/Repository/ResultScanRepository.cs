@@ -92,5 +92,33 @@ namespace Result_Scan_Model.Repository
 
             return resultScanModels;
         }
+
+        public bool Add(ResultScanModel resultScan)
+        {
+            using (SqlConnection conn = _context.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(@"
+            INSERT INTO Result_Scan_Motor_Washes 
+            (DateTime, InspectorId, LocationId, ProductId, ModelCodeId, PartMotorWashId, ScanResult, Result) 
+            VALUES 
+            (@DateTime, @InspectorId, @LocationId, @ProductId, @ModelCodeId, @PartMotorWashId, @ScanResult, @Result);
+        ", conn))
+                {
+                    // Tambahkan parameter untuk mencegah SQL Injection
+                    cmd.Parameters.AddWithValue("@DateTime", resultScan.DateTime);
+                    cmd.Parameters.AddWithValue("@InspectorId", resultScan.InspectorId ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LocationId", resultScan.LocationId != 0 ? resultScan.LocationId : (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ProductId", resultScan.ProductId != 0 ? resultScan.ProductId : (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ModelCodeId", string.IsNullOrEmpty(resultScan.ModelCodeId) ? (object)DBNull.Value : resultScan.ModelCodeId);
+                    cmd.Parameters.AddWithValue("@PartMotorWashId", string.IsNullOrEmpty(resultScan.PartMotorWashId) ? (object)DBNull.Value : resultScan.PartMotorWashId);
+                    cmd.Parameters.AddWithValue("@ScanResult", resultScan.ScanResult ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Result", resultScan.Result ?? (object)DBNull.Value);
+
+                    int rowsAffected = cmd.ExecuteNonQuery(); // Eksekusi query
+                    return rowsAffected > 0; // Jika lebih dari 0 berarti berhasil insert
+                }
+            }
+        }
     }
 }

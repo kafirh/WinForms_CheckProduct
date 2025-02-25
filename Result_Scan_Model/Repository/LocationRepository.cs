@@ -40,6 +40,7 @@ namespace Result_Scan_Model.Repository
 
         public LocationModel GetLocation(int id)
         {
+            LocationModel location = new LocationModel();
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
@@ -48,7 +49,7 @@ namespace Result_Scan_Model.Repository
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    LocationModel location = new LocationModel
+                     location = new LocationModel
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         LocationName = reader["LocationName"].ToString()
@@ -56,7 +57,7 @@ namespace Result_Scan_Model.Repository
                     return location;
                 }
             }
-            return new LocationModel();
+            return location;
         }
     }
 }

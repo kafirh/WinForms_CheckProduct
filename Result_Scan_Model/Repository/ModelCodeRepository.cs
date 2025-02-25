@@ -42,7 +42,7 @@ namespace Result_Scan_Model.Repository
 
         public ModelCodeModel GetModelCode(string modelCodeId)
         {
-            ModelCodeModel modelCode = null;
+            ModelCodeModel modelCode = new ModelCodeModel();
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
@@ -58,7 +58,7 @@ namespace Result_Scan_Model.Repository
                     };
                 }
             }
-            return modelCode = new ModelCodeModel();
+            return modelCode;
         }
     }
 }

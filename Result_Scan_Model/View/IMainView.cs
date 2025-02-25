@@ -9,6 +9,7 @@
 
         void SetWindowState(FormWindowState state);
         void LoadView(UserControl view); // Metode untuk menampilkan View di panelContainer
+        void RemoveView(UserControl view);
         void SetTitle(string title);
 
     }

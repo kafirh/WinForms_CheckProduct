@@ -20,7 +20,7 @@ namespace Result_Scan_Model.Repository
 
         public ScanPartModel GetScanPart(string modelCodeId)
         {
-            ScanPartModel model = null;
+            ScanPartModel model = new ScanPartModel();
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
@@ -36,7 +36,7 @@ namespace Result_Scan_Model.Repository
                     };
                 }
             }
-            return model = new ScanPartModel();
+            return model;
 
         }
     }
