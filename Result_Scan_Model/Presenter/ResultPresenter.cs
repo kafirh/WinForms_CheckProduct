@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 using Result_Scan_Model.Data;
 using Result_Scan_Model.Model;
 using Result_Scan_Model.Repository;
@@ -23,9 +24,9 @@ namespace Result_Scan_Model.Presenter
             _resultScanRepository = new ResultScanRepository(_dbContext);
         }
 
-        public void LoadResults()
+        public void LoadResults(DateTime date, string modelCodeId)
         {
-            List<ResultScanModel> results = _resultScanRepository.GetAllResultScan();
+            List<ResultScanModel> results = _resultScanRepository.GetAllResultScan(date,modelCodeId);
             _resultView.DisplayResults(results);
         }
     }

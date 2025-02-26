@@ -33,7 +33,7 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             btnSearch = new Button();
             dtFromDate = new DateTimePicker();
-            lblModelNumber = new Label();
+            lblModelCode = new Label();
             textBoxSearch = new TextBox();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -72,7 +72,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel2.Controls.Add(btnSearch, 3, 1);
             tableLayoutPanel2.Controls.Add(dtFromDate, 2, 1);
-            tableLayoutPanel2.Controls.Add(lblModelNumber, 1, 0);
+            tableLayoutPanel2.Controls.Add(lblModelCode, 1, 0);
             tableLayoutPanel2.Controls.Add(textBoxSearch, 2, 0);
             tableLayoutPanel2.Controls.Add(pictureBox8, 0, 1);
             tableLayoutPanel2.Controls.Add(pictureBox7, 0, 0);
@@ -99,6 +99,7 @@
             btnSearch.TabIndex = 22;
             btnSearch.Text = "search";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // dtFromDate
             // 
@@ -112,25 +113,27 @@
             dtFromDate.Size = new Size(575, 47);
             dtFromDate.TabIndex = 14;
             // 
-            // lblModelNumber
+            // lblModelCode
             // 
-            lblModelNumber.AutoSize = true;
-            lblModelNumber.Dock = DockStyle.Fill;
-            lblModelNumber.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblModelNumber.Location = new Point(63, 3);
-            lblModelNumber.Margin = new Padding(3);
-            lblModelNumber.Name = "lblModelNumber";
-            lblModelNumber.Size = new Size(226, 69);
-            lblModelNumber.TabIndex = 1;
-            lblModelNumber.Text = "Model Number";
-            lblModelNumber.TextAlign = ContentAlignment.MiddleLeft;
+            lblModelCode.AutoSize = true;
+            lblModelCode.Dock = DockStyle.Fill;
+            lblModelCode.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblModelCode.Location = new Point(63, 3);
+            lblModelCode.Margin = new Padding(3);
+            lblModelCode.Name = "lblModelCode";
+            lblModelCode.Size = new Size(226, 69);
+            lblModelCode.TabIndex = 1;
+            lblModelCode.Text = "Model Code";
+            lblModelCode.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxSearch
             // 
             textBoxSearch.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSearch.CharacterCasing = CharacterCasing.Upper;
             textBoxSearch.Font = new Font("Arial", 18F);
             textBoxSearch.Location = new Point(295, 16);
             textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.PlaceholderText = "Search Model Code";
             textBoxSearch.Size = new Size(575, 42);
             textBoxSearch.TabIndex = 20;
             // 
@@ -183,6 +186,7 @@
             btnClear2.TabIndex = 21;
             btnClear2.Text = "clear search";
             btnClear2.UseVisualStyleBackColor = false;
+            btnClear2.Click += btnClear2_Click;
             // 
             // dataGridView1
             // 
@@ -219,7 +223,7 @@
         private DateTimePicker dtFromDate;
         private TextBox textBoxSearch;
         private Label label13;
-        private Label lblModelNumber;
+        private Label lblModelCode;
         private Button btnSearch;
         private Button btnClear2;
         private DataGridView dataGridView1;

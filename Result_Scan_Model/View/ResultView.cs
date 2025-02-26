@@ -17,7 +17,7 @@ namespace Result_Scan_Model.View
             InitializeComponent();
             _presenter = new ResultPresenter(this);
             SetupDataGridView();
-            _presenter.LoadResults();  // Memanggil Presenter untuk mengambil data
+            _presenter.LoadResults(DateTime.Now.Date,"");  // Memanggil Presenter untuk mengambil data
         }
 
         private void SetupDataGridView()
@@ -37,7 +37,7 @@ namespace Result_Scan_Model.View
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
-            dataGridView1.ColumnHeadersDefaultCellStyle.Padding = new (3, 6, 3, 6);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Padding = new(3, 6, 3, 6);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Konfigurasi agar tabel menyesuaikan ukuran DataGridView
@@ -61,6 +61,12 @@ namespace Result_Scan_Model.View
             {
                 HeaderText = "Part Motor Washes",
                 DataPropertyName = "PartMotorWash",
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Model Code",
+                DataPropertyName = "ModelCodeId",
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
@@ -127,11 +133,27 @@ namespace Result_Scan_Model.View
                 PartMotorWash = r.PartMotorWash?.PartNumber ?? "N/A",
                 Location = r.Location?.LocationName ?? "N/A",
                 InspectorId = r.InspectorId,
-                Result = r.Result
+                Result = r.Result,
+                ModelCodeId = r.ModelCodeId,
             }).ToList();
 
             _bindingSource.DataSource = formattedResults;
             dataGridView1.Refresh();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DateTime date = dtFromDate.Value;
+            string modelCodeId = textBoxSearch.Text;
+
+            _presenter.LoadResults(date, modelCodeId);
+        }
+
+        private void btnClear2_Click(object sender, EventArgs e)
+        {
+            dtFromDate.Value = DateTime.Now.Date;
+            textBoxSearch.Clear();
+            _presenter.LoadResults(DateTime.Now.Date, "");
         }
     }
 }

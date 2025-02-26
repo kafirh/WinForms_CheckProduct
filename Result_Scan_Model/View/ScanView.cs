@@ -14,6 +14,7 @@ namespace Result_Scan_Model.View
         private readonly ScanPresenter _presenter;
         private System.Windows.Forms.Timer timer;
         private bool buttonClickedOnce;
+        private bool IsUpdateUi = false;
 
         public ScanView()
         {
@@ -74,6 +75,7 @@ namespace Result_Scan_Model.View
                     };
 
                     _presenter.DisplayOKNG(model);
+                    txtScanPartCode.Text = "";
                 }
             }
         }
@@ -135,6 +137,25 @@ namespace Result_Scan_Model.View
                 txtScanPartCode.Focus();
             }
         }
+        private void updateAuto(bool update)
+        {
+            //MessageBox.Show("masuk method");
+            if (update)
+            {
+                if (!string.IsNullOrWhiteSpace(txtScanPartCode.Text) && !string.IsNullOrWhiteSpace(txtPartNumberId.Text))
+                {
+                    ResultScanModel model = new ResultScanModel();
+                    model.ScanResult = txtScanPartCode.Text;
+                    model.ModelCodeId = cbModelNumber.SelectedValue.ToString() ?? "";
+                    model.PartMotorWashId = txtPartNumberId.Text;
+                    model.DateTime = DateTime.Now;
+
+                    _presenter.DisplayOKNG(model);
+                    txtScanPartCode.Text = "";
+                    IsUpdateUi = false;
+                }
+            }
+        }
 
         private void txtScanPartCode_KeyDown(object sender, KeyEventArgs e)
         {
@@ -150,6 +171,7 @@ namespace Result_Scan_Model.View
                     model.DateTime = DateTime.Now;
 
                     _presenter.DisplayOKNG(model);
+                    txtScanPartCode.Text = "";
                 }
             }
         }
@@ -163,6 +185,8 @@ namespace Result_Scan_Model.View
             {
                 txtScanPartCode.Text = data1;
             }
+            IsUpdateUi = true;
+            updateAuto(IsUpdateUi);
         }
     }
 }

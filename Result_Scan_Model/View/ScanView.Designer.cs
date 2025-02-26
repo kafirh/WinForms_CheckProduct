@@ -17,7 +17,6 @@ namespace Result_Scan_Model.View
         {
             if (disposing)
             {
-                MessageBox.Show("Disposing scanview");
                 _presenter.StopListening();
                 if (components != null)
                 {
@@ -337,6 +336,7 @@ namespace Result_Scan_Model.View
             // txtScanPartCode
             // 
             txtScanPartCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtScanPartCode.CharacterCasing = CharacterCasing.Upper;
             txtScanPartCode.Font = new Font("Arial", 14F);
             txtScanPartCode.Location = new Point(291, 12);
             txtScanPartCode.Name = "txtScanPartCode";

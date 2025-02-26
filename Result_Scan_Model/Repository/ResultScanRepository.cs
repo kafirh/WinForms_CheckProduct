@@ -16,14 +16,29 @@ namespace Result_Scan_Model.Repository
             _context = context;
         }
 
-        public List<ResultScanModel> GetAllResultScan()
+        public List<ResultScanModel> GetAllResultScan(DateTime date, string modelCodeId)
         {
             List<ResultScanModel> resultScanModels = new List<ResultScanModel>();
-
+            date = date.Date;
             using (SqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(@"
+                   WITH FilteredResults AS (
+                        SELECT 
+                            Id, 
+                            DateTime, 
+                            InspectorId, 
+                            LocationId, 
+                            ProductId, 
+                            ModelCodeId, 
+                            PartMotorWashId, 
+                            ScanResult, 
+                            Result
+                        FROM Result_Scan_Motor_Washes
+                        WHERE CAST(DateTime AS DATE) = @Date
+                            AND (@ModelCodeId = '' OR ModelCodeId = @ModelCodeId)
+                    )
                     SELECT 
                         r.Id, 
                         r.DateTime, 
@@ -34,19 +49,20 @@ namespace Result_Scan_Model.Repository
                         r.PartMotorWashId, 
                         r.ScanResult, 
                         r.Result,
-                        -- Ambil data dari tabel yang berelasi
                         COALESCE(l.LocationName, '') AS LocationName, 
                         COALESCE(p.ProductName, '') AS ProductName,
                         COALESCE(m.ModelNumber, '') AS ModelNumber,
                         COALESCE(pmw.PartNumberId, '') AS PartNumberId,
                         COALESCE(pmw.PartNumber, '') AS PartNumber
-                    FROM Result_Scan_Motor_Washes r
+                    FROM FilteredResults r
                     LEFT JOIN Locations l ON r.LocationId = l.Id
                     LEFT JOIN ProductType p ON r.ProductId = p.Id
                     LEFT JOIN GlobalModelCodes m ON r.ModelCodeId = m.ModelCodeId
                     LEFT JOIN Part_Motor_Washes pmw ON r.PartMotorWashId = pmw.PartNumberId;
                 ", conn))
                 {
+                    cmd.Parameters.AddWithValue("@Date", date);
+                    cmd.Parameters.AddWithValue("@ModelCodeId", modelCodeId);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -89,7 +105,6 @@ namespace Result_Scan_Model.Repository
                     }
                 }
             }
-
             return resultScanModels;
         }
 
