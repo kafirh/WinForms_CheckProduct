@@ -17,8 +17,6 @@ namespace Result_Scan_Model.View
         public int GetLocation();
         public void SetProductType(List<ProductTypeModel> products);
         public int GetProductType();
-        public void SetPrinter(List<string> printers);
-        public string GetPrinter();
         public void SetMode(string mode);
     }
 }

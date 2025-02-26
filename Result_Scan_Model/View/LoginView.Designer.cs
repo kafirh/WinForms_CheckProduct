@@ -138,6 +138,7 @@
             // hiddenPass
             // 
             hiddenPass.Anchor = AnchorStyles.None;
+            hiddenPass.BackColor = Color.FromArgb(241, 248, 233);
             hiddenPass.Cursor = Cursors.Hand;
             hiddenPass.Image = Properties.Resources.show;
             hiddenPass.InitialImage = (Image)resources.GetObject("hiddenPass.InitialImage");
@@ -161,7 +162,7 @@
             txtNIK.PlaceholderText = "NIK";
             txtNIK.Size = new Size(397, 31);
             txtNIK.TabIndex = 13;
-            txtNIK.KeyDown += this.txtNIK_KeyDown;
+            txtNIK.KeyDown += txtNIK_KeyDown;
             // 
             // panel2
             // 
@@ -186,6 +187,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = Color.FromArgb(241, 248, 233);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(477, 344);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
@@ -208,11 +210,12 @@
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(397, 31);
             txtPassword.TabIndex = 14;
-            txtPassword.KeyDown += this.txtPassword_KeyDown;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = Color.FromArgb(241, 248, 233);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(477, 448);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);

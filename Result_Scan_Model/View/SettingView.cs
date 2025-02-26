@@ -70,7 +70,6 @@ namespace Result_Scan_Model.View
                 textBoxPort.ReadOnly = true;
                 JPBox.Enabled = false;
                 locationBox.Enabled = false;
-                printerBox.Enabled = false;
             }
             else
             {
@@ -79,7 +78,6 @@ namespace Result_Scan_Model.View
                 textBoxPort.ReadOnly = false;
                 JPBox.Enabled = true;
                 locationBox.Enabled = true;
-                printerBox.Enabled = true;
             }
         }
 
@@ -117,20 +115,6 @@ namespace Result_Scan_Model.View
             }
         }
 
-        public void SetPrinter(List<string> printers)
-        {
-            printerBox.DataSource = printers;
-
-            // Pastikan printer default ada di dalam list sebelum diset
-            if (printers.Contains(Properties.Settings.Default.PrinterType))
-            {
-                printerBox.SelectedItem = Properties.Settings.Default.PrinterType;
-            }
-            else
-            {
-                printerBox.SelectedIndex = 0; // Pilih item pertama jika tidak ditemukan
-            }
-        }
         public int GetLocation()
         {
             if (locationBox.SelectedValue != null)
@@ -147,15 +131,6 @@ namespace Result_Scan_Model.View
                 return (int)JPBox.SelectedValue;
             }
             return 0; // Jika tidak ada yang dipilih, kembalikan null
-        }
-
-        public string GetPrinter()
-        {
-            if (printerBox.SelectedItem != null)
-            {
-                return printerBox.SelectedItem.ToString();
-            }
-            return string.Empty; // Jika tidak ada yang dipilih, kembalikan string kosong
         }
 
 
@@ -194,7 +169,7 @@ namespace Result_Scan_Model.View
                 return;
             }
             _presenter.SaveSetting();
-            Application.Restart();
+            this.Close();
 
         }
 

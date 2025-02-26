@@ -26,7 +26,8 @@ namespace Result_Scan_Model.Presenter
 
         public void LoadResults(DateTime date, string modelCodeId)
         {
-            List<ResultScanModel> results = _resultScanRepository.GetAllResultScan(date,modelCodeId);
+            int locationId = Properties.Settings.Default.LocationID;
+            List<ResultScanModel> results = _resultScanRepository.GetAllResultScan(date,modelCodeId,locationId);
             _resultView.DisplayResults(results);
         }
     }

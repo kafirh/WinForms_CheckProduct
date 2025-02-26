@@ -16,7 +16,7 @@ namespace Result_Scan_Model.Repository
             _context = context;
         }
 
-        public List<ResultScanModel> GetAllResultScan(DateTime date, string modelCodeId)
+        public List<ResultScanModel> GetAllResultScan(DateTime date, string modelCodeId, int locationId)
         {
             List<ResultScanModel> resultScanModels = new List<ResultScanModel>();
             date = date.Date;
@@ -38,6 +38,7 @@ namespace Result_Scan_Model.Repository
                         FROM Result_Scan_Motor_Washes
                         WHERE CAST(DateTime AS DATE) = @Date
                             AND (@ModelCodeId = '' OR ModelCodeId = @ModelCodeId)
+                            AND LocationId = @LocationId
                     )
                     SELECT 
                         r.Id, 
@@ -63,6 +64,7 @@ namespace Result_Scan_Model.Repository
                 {
                     cmd.Parameters.AddWithValue("@Date", date);
                     cmd.Parameters.AddWithValue("@ModelCodeId", modelCodeId);
+                    cmd.Parameters.AddWithValue("LocationId", locationId);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())

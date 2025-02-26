@@ -27,30 +27,12 @@ namespace Result_Scan_Model.Presenter
             LoadDataSetting();
         }
 
-        public List<string> GetAllPrinters()
-        {
-            List<string> printerList = PrinterSettings.InstalledPrinters.Cast<string>().ToList();
-
-            // Ambil printer default dari setting
-            string defaultPrinter = Properties.Settings.Default.PrinterType;
-
-            // Jika printer default tidak kosong dan belum ada di list, tambahkan ke paling atas
-            if (!string.IsNullOrEmpty(defaultPrinter) && !printerList.Contains(defaultPrinter))
-            {
-                printerList.Insert(0, defaultPrinter);
-            }
-
-            return printerList;
-        }
-
         private void LoadDataSetting()
         {
             List<LocationModel> locations = _locationRepository.GetAllLocation();
             List<ProductTypeModel> productTypeModels = _productTypeRepository.GetAllProduct();
-            List<string> printers = GetAllPrinters();
             _settingView.SetLocation(locations);
             _settingView.SetProductType(productTypeModels);
-            _settingView.SetPrinter(printers);
             _settingView.SetMode(Properties.Settings.Default.Mode);
             _settingView.portaddress = Properties.Settings.Default.Port.ToString();
             _settingView.ipaddress = Properties.Settings.Default.ServerIP;
@@ -65,7 +47,6 @@ namespace Result_Scan_Model.Presenter
             Properties.Settings.Default.Mode = _settingView.mode;
             Properties.Settings.Default.ProductID = productId;
             Properties.Settings.Default.LocationID = locationId;
-            Properties.Settings.Default.PrinterType = _settingView.GetPrinter();
             Properties.Settings.Default.ServerIP = _settingView.ipaddress;
             Properties.Settings.Default.Port = int.Parse(_settingView.portaddress);
             Properties.Settings.Default.ProductType = _productTypeRepository.GetProduct(productId).ProductName;

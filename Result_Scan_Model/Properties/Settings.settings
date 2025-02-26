@@ -29,8 +29,5 @@
     <Setting Name="Mode" Type="System.String" Scope="User">
       <Value Profile="(Default)">on</Value>
     </Setting>
-    <Setting Name="PrinterType" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Laser</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

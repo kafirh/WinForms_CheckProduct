@@ -45,8 +45,6 @@
             lblCameraPort = new Label();
             lblLocation = new Label();
             lblProduct = new Label();
-            lblPrinter = new Label();
-            printerBox = new ComboBox();
             JPBox = new ComboBox();
             locationBox = new ComboBox();
             label7 = new Label();
@@ -78,10 +76,10 @@
             flowLayoutPanel1.Controls.Add(btnOff);
             flowLayoutPanel1.Controls.Add(btnPreview);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(223, 51);
+            flowLayoutPanel1.Location = new Point(223, 55);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(10, 0, 0, 0);
-            flowLayoutPanel1.Size = new Size(361, 42);
+            flowLayoutPanel1.Size = new Size(361, 46);
             flowLayoutPanel1.TabIndex = 15;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -205,8 +203,6 @@
             tableLayoutPanel1.Controls.Add(lblCameraPort, 0, 3);
             tableLayoutPanel1.Controls.Add(lblLocation, 0, 6);
             tableLayoutPanel1.Controls.Add(lblProduct, 0, 7);
-            tableLayoutPanel1.Controls.Add(lblPrinter, 0, 8);
-            tableLayoutPanel1.Controls.Add(printerBox, 1, 8);
             tableLayoutPanel1.Controls.Add(JPBox, 1, 7);
             tableLayoutPanel1.Controls.Add(locationBox, 1, 6);
             tableLayoutPanel1.Controls.Add(label7, 1, 4);
@@ -215,18 +211,16 @@
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 10;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tableLayoutPanel1.RowCount = 9;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(587, 410);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -238,7 +232,7 @@
             lblActivated.ImageAlign = ContentAlignment.MiddleLeft;
             lblActivated.Location = new Point(3, 0);
             lblActivated.Name = "lblActivated";
-            lblActivated.Size = new Size(213, 48);
+            lblActivated.Size = new Size(213, 52);
             lblActivated.TabIndex = 1;
             lblActivated.Text = "Actived Setting";
             lblActivated.TextAlign = ContentAlignment.MiddleCenter;
@@ -252,7 +246,7 @@
             checkBox.Margin = new Padding(3, 4, 3, 4);
             checkBox.Name = "checkBox";
             checkBox.Padding = new Padding(10, 0, 0, 0);
-            checkBox.Size = new Size(177, 40);
+            checkBox.Size = new Size(177, 43);
             checkBox.TabIndex = 14;
             checkBox.Text = "checklist";
             checkBox.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -264,9 +258,9 @@
             lblPrintMode.AutoSize = true;
             lblPrintMode.Dock = DockStyle.Left;
             lblPrintMode.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrintMode.Location = new Point(3, 48);
+            lblPrintMode.Location = new Point(3, 52);
             lblPrintMode.Name = "lblPrintMode";
-            lblPrintMode.Size = new Size(155, 48);
+            lblPrintMode.Size = new Size(155, 52);
             lblPrintMode.TabIndex = 15;
             lblPrintMode.Text = "Print Mode";
             lblPrintMode.TextAlign = ContentAlignment.MiddleCenter;
@@ -276,9 +270,9 @@
             lblCameraIp.AutoSize = true;
             lblCameraIp.Dock = DockStyle.Left;
             lblCameraIp.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            lblCameraIp.Location = new Point(3, 96);
+            lblCameraIp.Location = new Point(3, 104);
             lblCameraIp.Name = "lblCameraIp";
-            lblCameraIp.Size = new Size(150, 48);
+            lblCameraIp.Size = new Size(150, 52);
             lblCameraIp.TabIndex = 16;
             lblCameraIp.Text = "Camera IP";
             lblCameraIp.TextAlign = ContentAlignment.MiddleCenter;
@@ -288,9 +282,9 @@
             lblCameraPort.AutoSize = true;
             lblCameraPort.Dock = DockStyle.Left;
             lblCameraPort.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            lblCameraPort.Location = new Point(3, 144);
+            lblCameraPort.Location = new Point(3, 156);
             lblCameraPort.Name = "lblCameraPort";
-            lblCameraPort.Size = new Size(179, 48);
+            lblCameraPort.Size = new Size(179, 52);
             lblCameraPort.TabIndex = 17;
             lblCameraPort.Text = "Camera Port";
             lblCameraPort.TextAlign = ContentAlignment.MiddleCenter;
@@ -300,9 +294,9 @@
             lblLocation.AutoSize = true;
             lblLocation.Dock = DockStyle.Left;
             lblLocation.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            lblLocation.Location = new Point(3, 240);
+            lblLocation.Location = new Point(3, 260);
             lblLocation.Name = "lblLocation";
-            lblLocation.Size = new Size(129, 48);
+            lblLocation.Size = new Size(129, 52);
             lblLocation.TabIndex = 21;
             lblLocation.Text = "Location";
             lblLocation.TextAlign = ContentAlignment.MiddleCenter;
@@ -312,36 +306,12 @@
             lblProduct.AutoSize = true;
             lblProduct.Dock = DockStyle.Left;
             lblProduct.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            lblProduct.Location = new Point(3, 288);
+            lblProduct.Location = new Point(3, 312);
             lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(187, 48);
+            lblProduct.Size = new Size(187, 52);
             lblProduct.TabIndex = 22;
             lblProduct.Text = "Jenis Produk";
             lblProduct.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblPrinter
-            // 
-            lblPrinter.AutoSize = true;
-            lblPrinter.Dock = DockStyle.Left;
-            lblPrinter.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            lblPrinter.Location = new Point(3, 336);
-            lblPrinter.Name = "lblPrinter";
-            lblPrinter.Size = new Size(103, 48);
-            lblPrinter.TabIndex = 23;
-            lblPrinter.Text = "Printer";
-            lblPrinter.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // printerBox
-            // 
-            printerBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            printerBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            printerBox.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            printerBox.FormattingEnabled = true;
-            printerBox.Location = new Point(223, 340);
-            printerBox.Margin = new Padding(3, 4, 3, 4);
-            printerBox.Name = "printerBox";
-            printerBox.Size = new Size(361, 41);
-            printerBox.TabIndex = 26;
             // 
             // JPBox
             // 
@@ -349,7 +319,7 @@
             JPBox.DropDownStyle = ComboBoxStyle.DropDownList;
             JPBox.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             JPBox.FormattingEnabled = true;
-            JPBox.Location = new Point(223, 292);
+            JPBox.Location = new Point(223, 316);
             JPBox.Margin = new Padding(3, 4, 3, 4);
             JPBox.Name = "JPBox";
             JPBox.Size = new Size(361, 41);
@@ -361,7 +331,7 @@
             locationBox.DropDownStyle = ComboBoxStyle.DropDownList;
             locationBox.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             locationBox.FormattingEnabled = true;
-            locationBox.Location = new Point(223, 244);
+            locationBox.Location = new Point(223, 264);
             locationBox.Margin = new Padding(3, 4, 3, 4);
             locationBox.Name = "locationBox";
             locationBox.Size = new Size(361, 41);
@@ -372,9 +342,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Red;
-            label7.Location = new Point(223, 192);
+            label7.Location = new Point(223, 208);
             label7.Name = "label7";
-            label7.Size = new Size(337, 24);
+            label7.Size = new Size(337, 26);
             label7.TabIndex = 20;
             label7.Text = "*Click button Connect after change IP/Port";
             // 
@@ -382,7 +352,7 @@
             // 
             textBoxPort.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxPort.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxPort.Location = new Point(223, 148);
+            textBoxPort.Location = new Point(223, 160);
             textBoxPort.Margin = new Padding(3, 4, 3, 4);
             textBoxPort.Name = "textBoxPort";
             textBoxPort.Size = new Size(361, 37);
@@ -392,7 +362,7 @@
             // 
             textBoxIP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxIP.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxIP.Location = new Point(223, 100);
+            textBoxIP.Location = new Point(223, 108);
             textBoxIP.Margin = new Padding(3, 4, 3, 4);
             textBoxIP.Name = "textBoxIP";
             textBoxIP.Size = new Size(361, 37);
@@ -456,8 +426,6 @@
         private Label lblCameraPort;
         private Label lblLocation;
         private Label lblProduct;
-        private Label lblPrinter;
-        private ComboBox printerBox;
         private ComboBox JPBox;
         private ComboBox locationBox;
         private Label label7;
