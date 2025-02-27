@@ -109,5 +109,16 @@ namespace Result_Scan_Model.Presenter
             }
             _currentView = null;
         }
+
+        public void RefreshView()
+        {
+            if (_viewRef.TryGetTarget(out var view) && _currentView != null)
+            {
+                string currentViewName = _currentView is ScanView ? "Scan" :
+                                         _currentView is ResultView ? "Result" : "Scan";
+
+                ChangeView(currentViewName);
+            }
+        }
     }
 }

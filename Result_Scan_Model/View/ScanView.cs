@@ -95,16 +95,30 @@ namespace Result_Scan_Model.View
             txtPartNumberId.Text = model.PartNumberId ?? "";
             txtPartNumber.Text = model.PartNumber ?? "";
         }
-        private void SetLabelOK(bool isActive)
+        private async void SetLabelOK(bool isActive)
         {
             labelOK.BackColor = isActive ? Color.Green : SystemColors.Control;
             labelOK.ForeColor = isActive ? Color.White : SystemColors.ControlText;
+
+            if (isActive)
+            {
+                await Task.Delay(3000); // Tunggu 10 detik
+                labelOK.BackColor = SystemColors.Control;
+                labelOK.ForeColor = SystemColors.ControlText;
+            }
         }
 
-        private void SetLabelNG(bool isActive)
+        private async void SetLabelNG(bool isActive)
         {
             labelNG.BackColor = isActive ? Color.Red : SystemColors.Control;
             labelNG.ForeColor = isActive ? Color.White : SystemColors.ControlText;
+
+            if (isActive)
+            {
+                await Task.Delay(3000); // Tunggu 10 detik
+                labelNG.BackColor = SystemColors.Control;
+                labelNG.ForeColor = SystemColors.ControlText;
+            }
         }
 
         public void SetOKNG(bool ok)

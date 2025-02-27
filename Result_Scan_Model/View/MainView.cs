@@ -27,11 +27,18 @@ namespace Result_Scan_Model
 
             // Pastikan panelContainer mengisi penuh form
             panelView.Dock = DockStyle.Fill;
-            lblUser.Text = "HALO," + (SessionManager.CurrentUser?.Name ?? "User");
+            SetUser();
 
             // Tambahkan event Resize untuk memastikan view selalu menyesuaikan ukuran
             panelView.Resize += (s, e) => ResizeView();
             InitializeOverlay();
+        }
+        private void SetUser()
+        {
+            lblUser.Text = "HALO," + (SessionManager.CurrentUser?.Name ?? "User");
+            lblUser.Image = Properties.Resources.icons8_user_100;
+            lblUser.ImageAlign = ContentAlignment.MiddleLeft;
+            lblUser.TextAlign = ContentAlignment.MiddleRight;
         }
 
         public void SetWindowState(FormWindowState state) => this.WindowState = state;
@@ -91,12 +98,13 @@ namespace Result_Scan_Model
             form.Show();
             FadeInForm(form);
 
-            SettingView settingView = new SettingView(this)
+            SettingView settingView = new SettingView()
             {
                 StartPosition = FormStartPosition.CenterScreen
             };
             settingView.ShowDialog();
             CloseOverlay(form);
+            _presenter.RefreshView();
         }
         private void FadeInForm(Form form)
         {

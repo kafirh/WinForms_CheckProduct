@@ -34,6 +34,7 @@ namespace Result_Scan_Model.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScanView));
             cbModelNumber = new ComboBox();
             labelScan = new Label();
             labelStatus = new Label();
@@ -53,6 +54,12 @@ namespace Result_Scan_Model.View
             btnClear = new Button();
             btnManual = new Button();
             tableLayoutInput = new TableLayoutPanel();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox1 = new PictureBox();
             txtScanPartCode = new TextBox();
             txtPartNumberId = new TextBox();
             lblPartNumberId = new Label();
@@ -63,6 +70,12 @@ namespace Result_Scan_Model.View
             tableLayoutDateTime.SuspendLayout();
             tableLayoutBtn.SuspendLayout();
             tableLayoutInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutOK_NG.SuspendLayout();
             SuspendLayout();
             // 
@@ -177,12 +190,12 @@ namespace Result_Scan_Model.View
             labelOK.Cursor = Cursors.No;
             labelOK.FlatStyle = FlatStyle.Popup;
             labelOK.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelOK.Image = (Image)resources.GetObject("labelOK.Image");
             labelOK.Location = new Point(158, 57);
             labelOK.Name = "labelOK";
             labelOK.Size = new Size(275, 290);
             labelOK.TabIndex = 15;
-            labelOK.Text = "OK";
-            labelOK.TextAlign = ContentAlignment.MiddleCenter;
+            labelOK.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutView
             // 
@@ -281,11 +294,14 @@ namespace Result_Scan_Model.View
             btnClear.BackColor = Color.Gold;
             btnClear.Dock = DockStyle.Fill;
             btnClear.Font = new Font("Segoe UI", 24F);
+            btnClear.Image = Properties.Resources.icons8_clear_50;
+            btnClear.ImageAlign = ContentAlignment.MiddleRight;
             btnClear.Location = new Point(3, 106);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(364, 97);
             btnClear.TabIndex = 13;
             btnClear.Text = "Clear";
+            btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Visible = false;
             // 
@@ -294,11 +310,14 @@ namespace Result_Scan_Model.View
             btnManual.BackColor = Color.LimeGreen;
             btnManual.Dock = DockStyle.Fill;
             btnManual.Font = new Font("Segoe UI", 24F);
+            btnManual.Image = Properties.Resources.icons8_input_48;
+            btnManual.ImageAlign = ContentAlignment.MiddleRight;
             btnManual.Location = new Point(3, 3);
             btnManual.Name = "btnManual";
             btnManual.Size = new Size(364, 97);
             btnManual.TabIndex = 12;
             btnManual.Text = "Input Manual";
+            btnManual.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnManual.UseVisualStyleBackColor = false;
             btnManual.Click += btnManual_Click_1;
             // 
@@ -308,6 +327,12 @@ namespace Result_Scan_Model.View
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32F));
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68F));
+            tableLayoutInput.Controls.Add(pictureBox5, 0, 5);
+            tableLayoutInput.Controls.Add(pictureBox6, 0, 4);
+            tableLayoutInput.Controls.Add(pictureBox9, 0, 3);
+            tableLayoutInput.Controls.Add(pictureBox2, 0, 2);
+            tableLayoutInput.Controls.Add(pictureBox3, 0, 1);
+            tableLayoutInput.Controls.Add(pictureBox1, 0, 0);
             tableLayoutInput.Controls.Add(cbModelNumber, 2, 1);
             tableLayoutInput.Controls.Add(txtScanPartCode, 2, 0);
             tableLayoutInput.Controls.Add(txtPartNumberId, 2, 2);
@@ -332,6 +357,78 @@ namespace Result_Scan_Model.View
             tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tableLayoutInput.Size = new Size(794, 352);
             tableLayoutInput.TabIndex = 18;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(3, 294);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(44, 47);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 24;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(3, 236);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(44, 43);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(3, 178);
+            pictureBox9.Margin = new Padding(3, 4, 3, 4);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(44, 42);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 22;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(3, 120);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(44, 43);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(3, 62);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(44, 43);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 15;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 41);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
             // 
             // txtScanPartCode
             // 
@@ -370,6 +467,8 @@ namespace Result_Scan_Model.View
             // 
             // tableLayoutOK_NG
             // 
+            tableLayoutOK_NG.BackColor = Color.PaleGreen;
+            tableLayoutOK_NG.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutOK_NG.ColumnCount = 2;
             tableLayoutOK_NG.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutOK_NG.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -391,11 +490,11 @@ namespace Result_Scan_Model.View
             labelNG.Cursor = Cursors.No;
             labelNG.FlatStyle = FlatStyle.Popup;
             labelNG.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelNG.Location = new Point(749, 57);
+            labelNG.Image = (Image)resources.GetObject("labelNG.Image");
+            labelNG.Location = new Point(748, 57);
             labelNG.Name = "labelNG";
             labelNG.Size = new Size(275, 290);
             labelNG.TabIndex = 16;
-            labelNG.Text = "NG";
             labelNG.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ScanView
@@ -413,6 +512,12 @@ namespace Result_Scan_Model.View
             tableLayoutBtn.ResumeLayout(false);
             tableLayoutInput.ResumeLayout(false);
             tableLayoutInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutOK_NG.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -442,5 +547,11 @@ namespace Result_Scan_Model.View
         private Label labelNG;
         private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutOK_NG;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox9;
     }
 }

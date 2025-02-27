@@ -19,12 +19,10 @@ namespace Result_Scan_Model.View
     public partial class SettingView : Form, ISettingView
     {
         private readonly SettingPresenter _presenter;
-        private MainView _mainView;
-        public SettingView(MainView mainView)
+        public SettingView()
         {
             InitializeComponent();
             _presenter = new SettingPresenter(this);
-            _mainView = mainView;
             ActivatedSetting(IsCheckBoxChecked);
         }
 
@@ -86,11 +84,10 @@ namespace Result_Scan_Model.View
             locationBox.DataSource = locations;
             locationBox.DisplayMember = "LocationName";
             locationBox.ValueMember = "Id";
-
             // Cek apakah Location mengandung ID default
-            if (locations.Any(p => p.Id == Properties.Settings.Default.ProductID))
+            if (locations.Any(p => p.Id == Properties.Settings.Default.LocationID))
             {
-                locationBox.SelectedValue = Properties.Settings.Default.ProductID;
+                locationBox.SelectedValue = Properties.Settings.Default.LocationID;
             }
             else
             {
@@ -103,7 +100,6 @@ namespace Result_Scan_Model.View
             JPBox.DataSource = products;
             JPBox.DisplayMember = "ProductName";
             JPBox.ValueMember = "Id";
-
             // Cek apakah produk mengandung ID default
             if (products.Any(p => p.Id == Properties.Settings.Default.ProductID))
             {

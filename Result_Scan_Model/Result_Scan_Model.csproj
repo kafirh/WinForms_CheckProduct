@@ -34,14 +34,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    <Folder Include="Component\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Component\" />
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

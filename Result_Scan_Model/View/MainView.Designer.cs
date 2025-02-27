@@ -42,14 +42,14 @@ namespace Result_Scan_Model
             panel2 = new Panel();
             panelView = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            button2 = new Button();
+            btnAbout = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             label2 = new Label();
             lblUser = new Label();
             panel3 = new Panel();
             panel4 = new Panel();
-            btnAbout = new Button();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Maximizeimg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Minimizeimg).BeginInit();
@@ -118,11 +118,14 @@ namespace Result_Scan_Model
             // lblFormTitle
             // 
             lblFormTitle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFormTitle.Location = new Point(3, 15);
+            lblFormTitle.Image = Properties.Resources.icons8_clothes_in_laundry_48;
+            lblFormTitle.ImageAlign = ContentAlignment.MiddleLeft;
+            lblFormTitle.Location = new Point(-1, -1);
             lblFormTitle.Name = "lblFormTitle";
-            lblFormTitle.Size = new Size(170, 34);
+            lblFormTitle.Size = new Size(174, 53);
             lblFormTitle.TabIndex = 1;
             lblFormTitle.Text = "LSBU";
+            lblFormTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonScan
             // 
@@ -131,8 +134,9 @@ namespace Result_Scan_Model
             buttonScan.FlatAppearance.BorderColor = Color.White;
             buttonScan.FlatAppearance.MouseDownBackColor = Color.Red;
             buttonScan.FlatAppearance.MouseOverBackColor = Color.Red;
-            buttonScan.Font = new Font("Arial", 18F, FontStyle.Bold);
+            buttonScan.Font = new Font("Arial", 16F, FontStyle.Bold);
             buttonScan.ForeColor = Color.FromArgb(241, 248, 233);
+            buttonScan.Image = Properties.Resources.icons8_barcode_50;
             buttonScan.ImageAlign = ContentAlignment.TopCenter;
             buttonScan.Location = new Point(0, 3);
             buttonScan.Margin = new Padding(0, 3, 0, 3);
@@ -141,6 +145,7 @@ namespace Result_Scan_Model
             buttonScan.Size = new Size(200, 99);
             buttonScan.TabIndex = 2;
             buttonScan.Text = "Scan";
+            buttonScan.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonScan.UseMnemonic = false;
             buttonScan.UseVisualStyleBackColor = false;
             buttonScan.Click += buttonScan_Click;
@@ -149,8 +154,9 @@ namespace Result_Scan_Model
             // 
             buttonRecord.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonRecord.BackColor = Color.MediumSeaGreen;
-            buttonRecord.Font = new Font("Arial", 18F, FontStyle.Bold);
+            buttonRecord.Font = new Font("Arial", 16F, FontStyle.Bold);
             buttonRecord.ForeColor = Color.FromArgb(241, 248, 233);
+            buttonRecord.Image = Properties.Resources.icons8_rescan_document_50;
             buttonRecord.ImageAlign = ContentAlignment.TopCenter;
             buttonRecord.Location = new Point(0, 108);
             buttonRecord.Margin = new Padding(0, 3, 0, 3);
@@ -158,6 +164,7 @@ namespace Result_Scan_Model
             buttonRecord.Size = new Size(200, 99);
             buttonRecord.TabIndex = 3;
             buttonRecord.Text = "Scan Record";
+            buttonRecord.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonRecord.UseVisualStyleBackColor = false;
             buttonRecord.Click += buttonRecord_Click;
             // 
@@ -167,6 +174,7 @@ namespace Result_Scan_Model
             buttonSetting.BackColor = Color.MediumSeaGreen;
             buttonSetting.Font = new Font("Arial", 18F, FontStyle.Bold);
             buttonSetting.ForeColor = Color.FromArgb(241, 248, 233);
+            buttonSetting.Image = Properties.Resources.icons8_setting_50__1_;
             buttonSetting.ImageAlign = ContentAlignment.TopCenter;
             buttonSetting.Location = new Point(0, 213);
             buttonSetting.Margin = new Padding(0, 3, 0, 3);
@@ -174,6 +182,7 @@ namespace Result_Scan_Model
             buttonSetting.Size = new Size(200, 99);
             buttonSetting.TabIndex = 4;
             buttonSetting.Text = "Setting";
+            buttonSetting.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonSetting.UseVisualStyleBackColor = false;
             buttonSetting.Click += buttonSetting_Click;
             // 
@@ -230,6 +239,37 @@ namespace Result_Scan_Model
             tableLayoutPanel1.Size = new Size(200, 762);
             tableLayoutPanel1.TabIndex = 5;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(255, 77, 77);
+            button2.Dock = DockStyle.Fill;
+            button2.Font = new Font("Arial", 16F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Image = Properties.Resources.icons8_logout_50;
+            button2.Location = new Point(3, 595);
+            button2.Name = "button2";
+            button2.Size = new Size(194, 114);
+            button2.TabIndex = 0;
+            button2.Text = "LOGOUT";
+            button2.TextImageRelation = TextImageRelation.ImageAboveText;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // btnAbout
+            // 
+            btnAbout.BackColor = Color.DodgerBlue;
+            btnAbout.Dock = DockStyle.Fill;
+            btnAbout.Font = new Font("Arial", 16F, FontStyle.Bold);
+            btnAbout.ForeColor = Color.White;
+            btnAbout.Image = Properties.Resources.icons8_about_50;
+            btnAbout.Location = new Point(3, 490);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new Size(194, 99);
+            btnAbout.TabIndex = 5;
+            btnAbout.Text = "ABOUT";
+            btnAbout.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAbout.UseVisualStyleBackColor = false;
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.BackColor = Color.White;
@@ -282,6 +322,7 @@ namespace Result_Scan_Model
             lblUser.Dock = DockStyle.Fill;
             lblUser.Font = new Font("Arial", 15F, FontStyle.Bold);
             lblUser.ForeColor = Color.FromArgb(241, 248, 233);
+            lblUser.ImageAlign = ContentAlignment.TopCenter;
             lblUser.Location = new Point(1285, 0);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(312, 85);
@@ -306,34 +347,7 @@ namespace Result_Scan_Model
             panel4.Size = new Size(1400, 762);
             panel4.TabIndex = 9;
             // 
-            // btnAbout
-            // 
-            btnAbout.BackColor = Color.DodgerBlue;
-            btnAbout.Dock = DockStyle.Fill;
-            btnAbout.Font = new Font("Arial", 18F, FontStyle.Bold);
-            btnAbout.ForeColor = Color.White;
-            btnAbout.Location = new Point(3, 490);
-            btnAbout.Name = "btnAbout";
-            btnAbout.Size = new Size(194, 99);
-            btnAbout.TabIndex = 5;
-            btnAbout.Text = "ABOUT";
-            btnAbout.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(255, 77, 77);
-            button2.Dock = DockStyle.Fill;
-            button2.Font = new Font("Arial", 18F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(3, 595);
-            button2.Name = "button2";
-            button2.Size = new Size(194, 114);
-            button2.TabIndex = 0;
-            button2.Text = "LOGOUT";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // Sidebar
+            // MainView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -343,7 +357,7 @@ namespace Result_Scan_Model
             Controls.Add(tableLayoutPanel3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Sidebar";
+            Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             WindowState = FormWindowState.Maximized;

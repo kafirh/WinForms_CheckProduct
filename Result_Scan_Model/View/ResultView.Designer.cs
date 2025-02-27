@@ -93,11 +93,14 @@
             btnSearch.Dock = DockStyle.Fill;
             btnSearch.Font = new Font("Microsoft Sans Serif", 18F);
             btnSearch.ForeColor = Color.White;
+            btnSearch.Image = Properties.Resources.icons8_search_64;
+            btnSearch.ImageAlign = ContentAlignment.MiddleRight;
             btnSearch.Location = new Point(876, 78);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(343, 69);
             btnSearch.TabIndex = 22;
             btnSearch.Text = "search";
+            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
@@ -180,11 +183,14 @@
             btnClear2.Dock = DockStyle.Fill;
             btnClear2.Font = new Font("Microsoft Sans Serif", 18F);
             btnClear2.ForeColor = Color.White;
+            btnClear2.Image = Properties.Resources.icons8_clear_50;
+            btnClear2.ImageAlign = ContentAlignment.MiddleRight;
             btnClear2.Location = new Point(876, 3);
             btnClear2.Name = "btnClear2";
             btnClear2.Size = new Size(343, 69);
             btnClear2.TabIndex = 21;
             btnClear2.Text = "clear search";
+            btnClear2.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClear2.UseVisualStyleBackColor = false;
             btnClear2.Click += btnClear2_Click;
             // 

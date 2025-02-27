@@ -134,11 +134,14 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Arial", 14.25F, FontStyle.Bold);
             btnCancel.ForeColor = Color.White;
+            btnCancel.Image = Properties.Resources.icons8_disconnected_48;
+            btnCancel.ImageAlign = ContentAlignment.MiddleRight;
             btnCancel.Location = new Point(333, 113);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(213, 61);
             btnCancel.TabIndex = 28;
             btnCancel.Text = "Cancel";
+            btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click_1;
             // 
@@ -165,11 +168,13 @@
             btnConnect.FlatStyle = FlatStyle.Flat;
             btnConnect.Font = new Font("Arial", 14.25F, FontStyle.Bold);
             btnConnect.ForeColor = Color.White;
+            btnConnect.Image = Properties.Resources.icons8_connected_48;
             btnConnect.Location = new Point(40, 113);
             btnConnect.Name = "btnConnect";
             btnConnect.Size = new Size(213, 61);
             btnConnect.TabIndex = 27;
             btnConnect.Text = "Connect";
+            btnConnect.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnConnect.UseVisualStyleBackColor = false;
             btnConnect.Click += btnConnect_Click;
             // 
