@@ -49,6 +49,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(241, 248, 233);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
@@ -108,6 +109,7 @@
             // 
             dtFromDate.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dtFromDate.CalendarFont = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtFromDate.CustomFormat = "dd MMMM yyyy";
             dtFromDate.Font = new Font("Segoe UI", 18F);
             dtFromDate.Format = DateTimePickerFormat.Custom;
             dtFromDate.Location = new Point(295, 89);

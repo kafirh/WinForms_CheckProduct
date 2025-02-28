@@ -188,12 +188,12 @@ namespace Result_Scan_Model
             // 
             // labelTitle
             // 
-            labelTitle.BackColor = Color.White;
+            labelTitle.BackColor = Color.FromArgb(241, 248, 233);
             labelTitle.Dock = DockStyle.Fill;
             labelTitle.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelTitle.Location = new Point(0, 0);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(1394, 54);
+            labelTitle.Size = new Size(1394, 41);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Title Page";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,15 +204,15 @@ namespace Result_Scan_Model
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1394, 54);
+            panel2.Size = new Size(1394, 41);
             panel2.TabIndex = 3;
             // 
             // panelView
             // 
             panelView.Dock = DockStyle.Fill;
-            panelView.Location = new Point(3, 63);
+            panelView.Location = new Point(3, 50);
             panelView.Name = "panelView";
-            panelView.Size = new Size(1394, 696);
+            panelView.Size = new Size(1394, 709);
             panelView.TabIndex = 4;
             // 
             // tableLayoutPanel1
@@ -272,7 +272,7 @@ namespace Result_Scan_Model
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.BackColor = Color.White;
+            tableLayoutPanel2.BackColor = Color.FromArgb(241, 248, 233);
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(panelView, 0, 1);
@@ -281,7 +281,7 @@ namespace Result_Scan_Model
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 47F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(1400, 762);
             tableLayoutPanel2.TabIndex = 6;

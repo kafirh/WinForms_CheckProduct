@@ -82,12 +82,12 @@ namespace Result_Scan_Model.View
             // cbModelNumber
             // 
             cbModelNumber.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            cbModelNumber.BackColor = SystemColors.ActiveCaption;
+            cbModelNumber.BackColor = SystemColors.ActiveBorder;
             cbModelNumber.DropDownStyle = ComboBoxStyle.DropDownList;
             cbModelNumber.FlatStyle = FlatStyle.Popup;
             cbModelNumber.Font = new Font("Arial", 16F);
             cbModelNumber.FormattingEnabled = true;
-            cbModelNumber.Location = new Point(291, 67);
+            cbModelNumber.Location = new Point(291, 64);
             cbModelNumber.Name = "cbModelNumber";
             cbModelNumber.Size = new Size(500, 40);
             cbModelNumber.TabIndex = 2;
@@ -99,7 +99,7 @@ namespace Result_Scan_Model.View
             labelScan.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelScan.Location = new Point(53, 0);
             labelScan.Name = "labelScan";
-            labelScan.Size = new Size(232, 58);
+            labelScan.Size = new Size(232, 56);
             labelScan.TabIndex = 3;
             labelScan.Text = "Scan Part Code";
             labelScan.TextAlign = ContentAlignment.MiddleLeft;
@@ -109,9 +109,9 @@ namespace Result_Scan_Model.View
             labelStatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelStatus.Location = new Point(53, 290);
+            labelStatus.Location = new Point(53, 280);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(232, 62);
+            labelStatus.Size = new Size(232, 58);
             labelStatus.TabIndex = 4;
             labelStatus.Text = "Status";
             labelStatus.TextAlign = ContentAlignment.MiddleLeft;
@@ -121,9 +121,9 @@ namespace Result_Scan_Model.View
             labelInspector.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelInspector.AutoSize = true;
             labelInspector.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelInspector.Location = new Point(53, 232);
+            labelInspector.Location = new Point(53, 224);
             labelInspector.Name = "labelInspector";
-            labelInspector.Size = new Size(232, 58);
+            labelInspector.Size = new Size(232, 56);
             labelInspector.TabIndex = 5;
             labelInspector.Text = "Inspector";
             labelInspector.TextAlign = ContentAlignment.MiddleLeft;
@@ -133,9 +133,9 @@ namespace Result_Scan_Model.View
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(53, 58);
+            label3.Location = new Point(53, 56);
             label3.Name = "label3";
-            label3.Size = new Size(232, 58);
+            label3.Size = new Size(232, 56);
             label3.TabIndex = 6;
             label3.Text = "Model Number";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -145,9 +145,9 @@ namespace Result_Scan_Model.View
             lblPartNumber.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPartNumber.AutoSize = true;
             lblPartNumber.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPartNumber.Location = new Point(53, 174);
+            lblPartNumber.Location = new Point(53, 168);
             lblPartNumber.Name = "lblPartNumber";
-            lblPartNumber.Size = new Size(232, 58);
+            lblPartNumber.Size = new Size(232, 56);
             lblPartNumber.TabIndex = 7;
             lblPartNumber.Text = "Part Number";
             lblPartNumber.TextAlign = ContentAlignment.MiddleLeft;
@@ -155,43 +155,43 @@ namespace Result_Scan_Model.View
             // txtPartNumber
             // 
             txtPartNumber.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPartNumber.Font = new Font("Arial", 14F);
-            txtPartNumber.Location = new Point(291, 186);
+            txtPartNumber.Font = new Font("Arial", 16F);
+            txtPartNumber.Location = new Point(291, 177);
             txtPartNumber.Name = "txtPartNumber";
             txtPartNumber.ReadOnly = true;
-            txtPartNumber.Size = new Size(500, 34);
+            txtPartNumber.Size = new Size(500, 38);
             txtPartNumber.TabIndex = 9;
             // 
             // txtInspector
             // 
             txtInspector.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtInspector.Font = new Font("Arial", 14F);
-            txtInspector.Location = new Point(291, 244);
+            txtInspector.Font = new Font("Arial", 16F);
+            txtInspector.Location = new Point(291, 233);
             txtInspector.Name = "txtInspector";
             txtInspector.ReadOnly = true;
-            txtInspector.Size = new Size(500, 34);
+            txtInspector.Size = new Size(500, 38);
             txtInspector.TabIndex = 10;
             // 
             // txtStatus
             // 
             txtStatus.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStatus.Font = new Font("Arial", 14F);
-            txtStatus.Location = new Point(291, 304);
+            txtStatus.Font = new Font("Arial", 16F);
+            txtStatus.Location = new Point(291, 290);
             txtStatus.Name = "txtStatus";
             txtStatus.ReadOnly = true;
-            txtStatus.Size = new Size(500, 34);
+            txtStatus.Size = new Size(500, 38);
             txtStatus.TabIndex = 11;
             // 
             // labelOK
             // 
             labelOK.Anchor = AnchorStyles.None;
-            labelOK.BackColor = SystemColors.Control;
-            labelOK.BorderStyle = BorderStyle.Fixed3D;
+            labelOK.BackColor = SystemColors.ButtonShadow;
+            labelOK.BorderStyle = BorderStyle.FixedSingle;
             labelOK.Cursor = Cursors.No;
             labelOK.FlatStyle = FlatStyle.Popup;
             labelOK.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelOK.Image = (Image)resources.GetObject("labelOK.Image");
-            labelOK.Location = new Point(158, 57);
+            labelOK.Location = new Point(158, 64);
             labelOK.Name = "labelOK";
             labelOK.Size = new Size(275, 290);
             labelOK.TabIndex = 15;
@@ -199,7 +199,7 @@ namespace Result_Scan_Model.View
             // 
             // tableLayoutView
             // 
-            tableLayoutView.BackColor = Color.White;
+            tableLayoutView.BackColor = Color.FromArgb(241, 248, 233);
             tableLayoutView.ColumnCount = 3;
             tableLayoutView.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
@@ -210,9 +210,9 @@ namespace Result_Scan_Model.View
             tableLayoutView.Location = new Point(0, 0);
             tableLayoutView.Name = "tableLayoutView";
             tableLayoutView.RowCount = 3;
-            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Percent, 2.3929472F));
-            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Percent, 45.84383F));
-            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Percent, 51.63728F));
+            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Absolute, 350F));
+            tableLayoutView.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutView.Size = new Size(1228, 794);
             tableLayoutView.TabIndex = 17;
             // 
@@ -224,12 +224,12 @@ namespace Result_Scan_Model.View
             tableLayoutPanel5.Controls.Add(tableLayoutDateTime, 1, 0);
             tableLayoutPanel5.Controls.Add(tableLayoutInput, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(23, 22);
+            tableLayoutPanel5.Location = new Point(23, 23);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(1182, 358);
+            tableLayoutPanel5.Size = new Size(1182, 344);
             tableLayoutPanel5.TabIndex = 18;
             // 
             // tableLayoutDateTime
@@ -246,7 +246,7 @@ namespace Result_Scan_Model.View
             tableLayoutDateTime.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutDateTime.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutDateTime.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutDateTime.Size = new Size(376, 352);
+            tableLayoutDateTime.Size = new Size(376, 338);
             tableLayoutDateTime.TabIndex = 17;
             // 
             // lblTime
@@ -254,7 +254,7 @@ namespace Result_Scan_Model.View
             lblTime.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(3, 82);
+            lblTime.Location = new Point(3, 77);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(370, 46);
             lblTime.TabIndex = 14;
@@ -266,7 +266,7 @@ namespace Result_Scan_Model.View
             lblDate.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDate.Location = new Point(3, 12);
+            lblDate.Location = new Point(3, 10);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(370, 46);
             lblDate.TabIndex = 13;
@@ -280,13 +280,13 @@ namespace Result_Scan_Model.View
             tableLayoutBtn.Controls.Add(btnClear, 0, 1);
             tableLayoutBtn.Controls.Add(btnManual, 0, 0);
             tableLayoutBtn.Dock = DockStyle.Fill;
-            tableLayoutBtn.Location = new Point(3, 143);
+            tableLayoutBtn.Location = new Point(3, 137);
             tableLayoutBtn.Name = "tableLayoutBtn";
             tableLayoutBtn.RowCount = 2;
             tableLayoutBtn.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutBtn.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutBtn.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutBtn.Size = new Size(370, 206);
+            tableLayoutBtn.Size = new Size(370, 198);
             tableLayoutBtn.TabIndex = 15;
             // 
             // btnClear
@@ -296,14 +296,15 @@ namespace Result_Scan_Model.View
             btnClear.Font = new Font("Segoe UI", 24F);
             btnClear.Image = Properties.Resources.icons8_clear_50;
             btnClear.ImageAlign = ContentAlignment.MiddleRight;
-            btnClear.Location = new Point(3, 106);
+            btnClear.Location = new Point(3, 102);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(364, 97);
+            btnClear.Size = new Size(364, 93);
             btnClear.TabIndex = 13;
             btnClear.Text = "Clear";
             btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Visible = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnManual
             // 
@@ -314,7 +315,7 @@ namespace Result_Scan_Model.View
             btnManual.ImageAlign = ContentAlignment.MiddleRight;
             btnManual.Location = new Point(3, 3);
             btnManual.Name = "btnManual";
-            btnManual.Size = new Size(364, 97);
+            btnManual.Size = new Size(364, 93);
             btnManual.TabIndex = 12;
             btnManual.Text = "Input Manual";
             btnManual.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -355,14 +356,14 @@ namespace Result_Scan_Model.View
             tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.Size = new Size(794, 352);
+            tableLayoutInput.Size = new Size(794, 338);
             tableLayoutInput.TabIndex = 18;
             // 
             // pictureBox5
             // 
             pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(3, 294);
+            pictureBox5.Location = new Point(3, 284);
             pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 47);
@@ -374,7 +375,7 @@ namespace Result_Scan_Model.View
             // 
             pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(3, 236);
+            pictureBox6.Location = new Point(3, 228);
             pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(44, 43);
@@ -386,7 +387,7 @@ namespace Result_Scan_Model.View
             // 
             pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(3, 178);
+            pictureBox9.Location = new Point(3, 172);
             pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(44, 42);
@@ -398,7 +399,7 @@ namespace Result_Scan_Model.View
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 120);
+            pictureBox2.Location = new Point(3, 116);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(44, 43);
@@ -410,7 +411,7 @@ namespace Result_Scan_Model.View
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(3, 62);
+            pictureBox3.Location = new Point(3, 60);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 43);
@@ -434,23 +435,23 @@ namespace Result_Scan_Model.View
             // 
             txtScanPartCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtScanPartCode.CharacterCasing = CharacterCasing.Upper;
-            txtScanPartCode.Font = new Font("Arial", 14F);
-            txtScanPartCode.Location = new Point(291, 12);
+            txtScanPartCode.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtScanPartCode.Location = new Point(291, 8);
             txtScanPartCode.Name = "txtScanPartCode";
             txtScanPartCode.PlaceholderText = "Input Scan";
             txtScanPartCode.ReadOnly = true;
-            txtScanPartCode.Size = new Size(500, 34);
+            txtScanPartCode.Size = new Size(500, 39);
             txtScanPartCode.TabIndex = 1;
             txtScanPartCode.KeyDown += txtScanPartCode_KeyDown;
             // 
             // txtPartNumberId
             // 
             txtPartNumberId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPartNumberId.Font = new Font("Arial", 14F);
-            txtPartNumberId.Location = new Point(291, 128);
+            txtPartNumberId.Font = new Font("Arial", 16F);
+            txtPartNumberId.Location = new Point(291, 121);
             txtPartNumberId.Name = "txtPartNumberId";
             txtPartNumberId.ReadOnly = true;
-            txtPartNumberId.Size = new Size(500, 34);
+            txtPartNumberId.Size = new Size(500, 38);
             txtPartNumberId.TabIndex = 13;
             // 
             // lblPartNumberId
@@ -458,40 +459,40 @@ namespace Result_Scan_Model.View
             lblPartNumberId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPartNumberId.AutoSize = true;
             lblPartNumberId.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPartNumberId.Location = new Point(53, 116);
+            lblPartNumberId.Location = new Point(53, 112);
             lblPartNumberId.Name = "lblPartNumberId";
-            lblPartNumberId.Size = new Size(232, 58);
+            lblPartNumberId.Size = new Size(232, 56);
             lblPartNumberId.TabIndex = 12;
             lblPartNumberId.Text = "Part Number Id";
             lblPartNumberId.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tableLayoutOK_NG
             // 
-            tableLayoutOK_NG.BackColor = Color.PaleGreen;
-            tableLayoutOK_NG.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tableLayoutOK_NG.BackColor = Color.MediumSeaGreen;
+            tableLayoutOK_NG.CellBorderStyle = TableLayoutPanelCellBorderStyle.OutsetPartial;
             tableLayoutOK_NG.ColumnCount = 2;
             tableLayoutOK_NG.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutOK_NG.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutOK_NG.Controls.Add(labelNG, 1, 0);
             tableLayoutOK_NG.Controls.Add(labelOK, 0, 0);
             tableLayoutOK_NG.Dock = DockStyle.Fill;
-            tableLayoutOK_NG.Location = new Point(23, 386);
+            tableLayoutOK_NG.Location = new Point(23, 373);
             tableLayoutOK_NG.Name = "tableLayoutOK_NG";
             tableLayoutOK_NG.RowCount = 1;
             tableLayoutOK_NG.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutOK_NG.Size = new Size(1182, 405);
+            tableLayoutOK_NG.Size = new Size(1182, 418);
             tableLayoutOK_NG.TabIndex = 19;
             // 
             // labelNG
             // 
             labelNG.Anchor = AnchorStyles.None;
-            labelNG.BackColor = SystemColors.Control;
-            labelNG.BorderStyle = BorderStyle.Fixed3D;
+            labelNG.BackColor = SystemColors.ButtonShadow;
+            labelNG.BorderStyle = BorderStyle.FixedSingle;
             labelNG.Cursor = Cursors.No;
             labelNG.FlatStyle = FlatStyle.Popup;
             labelNG.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelNG.Image = (Image)resources.GetObject("labelNG.Image");
-            labelNG.Location = new Point(748, 57);
+            labelNG.Location = new Point(748, 64);
             labelNG.Name = "labelNG";
             labelNG.Size = new Size(275, 290);
             labelNG.TabIndex = 16;

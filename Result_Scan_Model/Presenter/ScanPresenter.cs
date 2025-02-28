@@ -26,7 +26,7 @@ namespace Result_Scan_Model.Presenter
             _modelCodeRepository = new ModelCodeRepository(_dbContext);
             _partMotorWashRepository = new PartMotorWashRepository(_dbContext);
             _scanPartRepository = new ScanPartRepository(_dbContext);
-            _resultScanRepository = new ResultScanRepository(_dbContext);
+            _resultScanRepository = _resultScanRepository = ResultScanRepository.Instance;
             _tcpConnection = new TCPConnection(UpdateUI1);
 
             // Inisialisasi tampilan pertama kali

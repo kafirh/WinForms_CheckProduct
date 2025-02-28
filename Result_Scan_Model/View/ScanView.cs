@@ -170,6 +170,12 @@ namespace Result_Scan_Model.View
                 }
             }
         }
+        public async void RefreshScan()
+        {
+            // Implementasi untuk refresh koneksi TCP atau lainnya
+            await _presenter.StartListeningAsync();
+        }
+
 
         private void txtScanPartCode_KeyDown(object sender, KeyEventArgs e)
         {
@@ -201,6 +207,15 @@ namespace Result_Scan_Model.View
             }
             IsUpdateUi = true;
             updateAuto(IsUpdateUi);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtScanPartCode.Text = "";
+            txtPartNumber.Text = "";
+            txtPartNumberId.Text = "";
+
+            cbModelNumber.SelectedIndex = -1;
         }
     }
 }

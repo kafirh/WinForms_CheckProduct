@@ -12,6 +12,7 @@ namespace Result_Scan_Model.View
         private readonly ResultPresenter _presenter;
         private BindingSource _bindingSource = new BindingSource();
 
+
         public ResultView()
         {
             InitializeComponent();
@@ -29,9 +30,8 @@ namespace Result_Scan_Model.View
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.Enabled = false;
             dataGridView1.CurrentCell = null;
-
+            dataGridView1.Enabled = true;
 
             // Ubah warna header menjadi biru
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
@@ -137,8 +137,22 @@ namespace Result_Scan_Model.View
                 ModelCodeId = r.ModelCodeId,
             }).ToList();
 
-            _bindingSource.DataSource = formattedResults;
-            dataGridView1.Refresh();
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() =>
+                {
+                    _bindingSource.DataSource = formattedResults;
+                    dataGridView1.DataSource = _bindingSource;
+                    dataGridView1.Refresh();
+                }));
+            }
+            else
+            {
+                _bindingSource.DataSource = formattedResults;
+                dataGridView1.DataSource = _bindingSource;
+                dataGridView1.Refresh();
+            }
+            MessageBox.Show("TerLoad");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

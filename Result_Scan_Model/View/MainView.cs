@@ -104,7 +104,8 @@ namespace Result_Scan_Model
             };
             settingView.ShowDialog();
             CloseOverlay(form);
-            _presenter.RefreshView();
+            // Refresh ScanView setelah setting ditutup
+            _presenter.RefreshScanView();
         }
         private void FadeInForm(Form form)
         {

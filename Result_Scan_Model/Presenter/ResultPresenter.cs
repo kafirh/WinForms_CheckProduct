@@ -21,13 +21,23 @@ namespace Result_Scan_Model.Presenter
         {
             _dbContext = new DatabaseContext();
             _resultView = resultView;
-            _resultScanRepository = new ResultScanRepository(_dbContext);
+            _resultScanRepository = ResultScanRepository.Instance;
+            // Pastikan event tidak duplikat
+            _resultScanRepository.DataUpdated -= OnDataUpdated;
+            _resultScanRepository.DataUpdated += OnDataUpdated;
+        }
+        private void OnDataUpdated()
+        {
+            LoadResults(DateTime.Now.Date, "");
         }
 
-        public void LoadResults(DateTime date, string modelCodeId)
+        public async void LoadResults(DateTime date, string modelCodeId)
         {
             int locationId = Properties.Settings.Default.LocationID;
-            List<ResultScanModel> results = _resultScanRepository.GetAllResultScan(date,modelCodeId,locationId);
+
+            List<ResultScanModel> results = await Task.Run(() =>
+                _resultScanRepository.GetAllResultScan(date, modelCodeId, locationId));
+
             _resultView.DisplayResults(results);
         }
     }

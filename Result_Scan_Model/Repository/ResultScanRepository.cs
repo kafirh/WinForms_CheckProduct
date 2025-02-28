@@ -9,11 +9,30 @@ namespace Result_Scan_Model.Repository
 {
     public class ResultScanRepository
     {
+        private static ResultScanRepository _instance;
+        private static readonly object _lock = new object();
         private readonly DatabaseContext _context;
 
-        public ResultScanRepository(DatabaseContext context)
+        // Constructor private agar tidak bisa diinstansiasi langsung
+        private ResultScanRepository()
         {
-            _context = context;
+            _context = new DatabaseContext();
+        }
+
+        // Properti untuk mendapatkan instance tunggal
+        public static ResultScanRepository Instance
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new ResultScanRepository();
+                    }
+                    return _instance;
+                }
+            }
         }
 
         public List<ResultScanModel> GetAllResultScan(DateTime date, string modelCodeId, int locationId)
@@ -109,6 +128,7 @@ namespace Result_Scan_Model.Repository
             }
             return resultScanModels;
         }
+        public event Action DataUpdated;
 
         public bool Add(ResultScanModel resultScan)
         {
@@ -133,6 +153,10 @@ namespace Result_Scan_Model.Repository
                     cmd.Parameters.AddWithValue("@Result", resultScan.Result ?? (object)DBNull.Value);
 
                     int rowsAffected = cmd.ExecuteNonQuery(); // Eksekusi query
+                    if (rowsAffected > 0)
+                    {
+                        DataUpdated?.Invoke(); // Trigger event jika insert sukses
+                    }
                     return rowsAffected > 0; // Jika lebih dari 0 berarti berhasil insert
                 }
             }
