@@ -73,7 +73,7 @@ namespace Result_Scan_Model.View
                         PartMotorWashId = txtPartNumberId.Text,
                         DateTime = DateTime.Now
                     };
-
+                    txtLastScan.Text = model.ScanResult;
                     _presenter.DisplayOKNG(model);
                     txtScanPartCode.Text = "";
                 }
@@ -145,6 +145,7 @@ namespace Result_Scan_Model.View
             btnManual.Text = buttonClickedOnce ? "Auto Print" : "Input Manual";
             txtScanPartCode.ReadOnly = !buttonClickedOnce;
             txtStatus.BackColor = SystemColors.Control;
+            Clear();
 
             if (buttonClickedOnce)
             {
@@ -158,11 +159,17 @@ namespace Result_Scan_Model.View
             {
                 if (!string.IsNullOrWhiteSpace(txtScanPartCode.Text) && !string.IsNullOrWhiteSpace(txtPartNumberId.Text))
                 {
+                    if(txtScanPartCode.Text.Equals("NOREAD", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return;
+                    }
                     ResultScanModel model = new ResultScanModel();
                     model.ScanResult = txtScanPartCode.Text;
                     model.ModelCodeId = cbModelNumber.SelectedValue.ToString() ?? "";
                     model.PartMotorWashId = txtPartNumberId.Text;
                     model.DateTime = DateTime.Now;
+
+                    txtLastScan.Text = model.ScanResult;
 
                     _presenter.DisplayOKNG(model);
                     txtScanPartCode.Text = "";
@@ -190,6 +197,8 @@ namespace Result_Scan_Model.View
                     model.PartMotorWashId = txtPartNumberId.Text;
                     model.DateTime = DateTime.Now;
 
+                    txtLastScan.Text = model.ScanResult;
+
                     _presenter.DisplayOKNG(model);
                     txtScanPartCode.Text = "";
                 }
@@ -211,9 +220,14 @@ namespace Result_Scan_Model.View
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            Clear();
+        }
+        private void Clear()
+        {
             txtScanPartCode.Text = "";
             txtPartNumber.Text = "";
             txtPartNumberId.Text = "";
+            txtLastScan.Text = "";
 
             cbModelNumber.SelectedIndex = -1;
         }

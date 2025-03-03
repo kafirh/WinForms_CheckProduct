@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Result_Scan_Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63ed3e1a0eee9a02d59fe7d8b3100dcacb4fed4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7669d34c75c62eed3fc42588631c62d1eeaf9bbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Result_Scan_Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Result_Scan_Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

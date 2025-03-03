@@ -18,7 +18,22 @@ namespace Result_Scan_Model.View
             InitializeComponent();
             _presenter = new ResultPresenter(this);
             SetupDataGridView();
-            _presenter.LoadResults(DateTime.Now.Date,"");  // Memanggil Presenter untuk mengambil data
+            LoadComboBoxResult();
+            _presenter.LoadResults(DateTime.Now.Date, "",GetcbResult());  // Memanggil Presenter untuk mengambil data
+        }
+
+        public string GetcbResult()
+        {
+            return cbResult.SelectedItem.ToString() ?? "";
+        }
+        private void LoadComboBoxResult()
+        {
+            cbResult.Items.Clear();
+            cbResult.Items.Add("ALL");
+            cbResult.Items.Add("OK");
+            cbResult.Items.Add("NG");
+
+            cbResult.SelectedIndex = 0; // Pilih "ALL" sebagai default
         }
 
         private void SetupDataGridView()
@@ -34,9 +49,9 @@ namespace Result_Scan_Model.View
             dataGridView1.Enabled = true;
 
             // Ubah warna header menjadi biru
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(21, 136, 50); ;
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.Padding = new(3, 6, 3, 6);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -152,22 +167,27 @@ namespace Result_Scan_Model.View
                 dataGridView1.DataSource = _bindingSource;
                 dataGridView1.Refresh();
             }
-            MessageBox.Show("TerLoad");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DateTime date = dtFromDate.Value;
-            string modelCodeId = textBoxSearch.Text;
-
-            _presenter.LoadResults(date, modelCodeId);
+            string search = textBoxSearch.Text;
+            string result = GetcbResult();
+            _presenter.LoadResults(date, search, GetcbResult());
         }
 
         private void btnClear2_Click(object sender, EventArgs e)
         {
             dtFromDate.Value = DateTime.Now.Date;
+            cbResult.SelectedIndex = 0;
             textBoxSearch.Clear();
-            _presenter.LoadResults(DateTime.Now.Date, "");
+            _presenter.LoadResults(DateTime.Now.Date, "", GetcbResult());
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

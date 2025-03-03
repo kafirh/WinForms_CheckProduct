@@ -9,6 +9,7 @@ namespace Result_Scan_Model.View
 {
     public interface IResultView
     {
+        public string GetcbResult();
         public void DisplayResults(List<ResultScanModel> results);
     }
 }

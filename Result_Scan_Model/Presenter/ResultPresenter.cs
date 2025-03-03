@@ -28,17 +28,41 @@ namespace Result_Scan_Model.Presenter
         }
         private void OnDataUpdated()
         {
-            LoadResults(DateTime.Now.Date, "");
+            LoadResults(DateTime.Now.Date, "",_resultView.GetcbResult());
         }
 
-        public async void LoadResults(DateTime date, string modelCodeId)
+        public async void LoadResults(DateTime date, string search,string result)
         {
             int locationId = Properties.Settings.Default.LocationID;
 
             List<ResultScanModel> results = await Task.Run(() =>
-                _resultScanRepository.GetAllResultScan(date, modelCodeId, locationId));
+                _resultScanRepository.GetAllResultScan(date, locationId,result));
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                results = SearchResults(search, results);
+            }
 
             _resultView.DisplayResults(results);
+        }
+
+        public List<ResultScanModel> SearchResults(string search, List<ResultScanModel> results)
+        {
+            if (string.IsNullOrEmpty(search))
+            {
+                _resultView.DisplayResults(results); // Tampilkan semua jika kosong
+                return results;
+            }
+
+            var filteredResults = results.Where(r =>
+                r.ScanResult.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                r.ModelCode.ModelNumber.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                r.ModelCodeId.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                r.PartMotorWash.PartNumber.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                r.Location.LocationName.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                r.InspectorId.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            return filteredResults;
         }
     }
 }

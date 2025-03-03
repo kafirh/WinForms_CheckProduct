@@ -54,42 +54,46 @@ namespace Result_Scan_Model.View
             btnClear = new Button();
             btnManual = new Button();
             tableLayoutInput = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            txtScanPartCode = new TextBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            txtScanPartCode = new TextBox();
-            txtPartNumberId = new TextBox();
             lblPartNumberId = new Label();
+            txtPartNumberId = new TextBox();
+            labelLastScan = new Label();
+            txtLastScan = new TextBox();
             tableLayoutOK_NG = new TableLayoutPanel();
             labelNG = new Label();
+            pictureBox4 = new PictureBox();
             tableLayoutView.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             tableLayoutDateTime.SuspendLayout();
             tableLayoutBtn.SuspendLayout();
             tableLayoutInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutOK_NG.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // cbModelNumber
             // 
-            cbModelNumber.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cbModelNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cbModelNumber.BackColor = SystemColors.ActiveBorder;
             cbModelNumber.DropDownStyle = ComboBoxStyle.DropDownList;
             cbModelNumber.FlatStyle = FlatStyle.Popup;
-            cbModelNumber.Font = new Font("Arial", 16F);
+            cbModelNumber.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbModelNumber.FormattingEnabled = true;
-            cbModelNumber.Location = new Point(291, 64);
+            cbModelNumber.Location = new Point(291, 99);
             cbModelNumber.Name = "cbModelNumber";
-            cbModelNumber.Size = new Size(500, 40);
+            cbModelNumber.Size = new Size(500, 43);
             cbModelNumber.TabIndex = 2;
             // 
             // labelScan
@@ -99,7 +103,7 @@ namespace Result_Scan_Model.View
             labelScan.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelScan.Location = new Point(53, 0);
             labelScan.Name = "labelScan";
-            labelScan.Size = new Size(232, 56);
+            labelScan.Size = new Size(232, 48);
             labelScan.TabIndex = 3;
             labelScan.Text = "Scan Part Code";
             labelScan.TextAlign = ContentAlignment.MiddleLeft;
@@ -109,9 +113,9 @@ namespace Result_Scan_Model.View
             labelStatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelStatus.Location = new Point(53, 280);
+            labelStatus.Location = new Point(53, 288);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(232, 58);
+            labelStatus.Size = new Size(232, 50);
             labelStatus.TabIndex = 4;
             labelStatus.Text = "Status";
             labelStatus.TextAlign = ContentAlignment.MiddleLeft;
@@ -121,9 +125,9 @@ namespace Result_Scan_Model.View
             labelInspector.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelInspector.AutoSize = true;
             labelInspector.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelInspector.Location = new Point(53, 224);
+            labelInspector.Location = new Point(53, 240);
             labelInspector.Name = "labelInspector";
-            labelInspector.Size = new Size(232, 56);
+            labelInspector.Size = new Size(232, 48);
             labelInspector.TabIndex = 5;
             labelInspector.Text = "Inspector";
             labelInspector.TextAlign = ContentAlignment.MiddleLeft;
@@ -133,9 +137,9 @@ namespace Result_Scan_Model.View
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(53, 56);
+            label3.Location = new Point(53, 96);
             label3.Name = "label3";
-            label3.Size = new Size(232, 56);
+            label3.Size = new Size(232, 48);
             label3.TabIndex = 6;
             label3.Text = "Model Number";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -145,41 +149,41 @@ namespace Result_Scan_Model.View
             lblPartNumber.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPartNumber.AutoSize = true;
             lblPartNumber.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPartNumber.Location = new Point(53, 168);
+            lblPartNumber.Location = new Point(53, 192);
             lblPartNumber.Name = "lblPartNumber";
-            lblPartNumber.Size = new Size(232, 56);
+            lblPartNumber.Size = new Size(232, 48);
             lblPartNumber.TabIndex = 7;
             lblPartNumber.Text = "Part Number";
             lblPartNumber.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtPartNumber
             // 
-            txtPartNumber.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPartNumber.Font = new Font("Arial", 16F);
-            txtPartNumber.Location = new Point(291, 177);
+            txtPartNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPartNumber.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPartNumber.Location = new Point(291, 195);
             txtPartNumber.Name = "txtPartNumber";
             txtPartNumber.ReadOnly = true;
-            txtPartNumber.Size = new Size(500, 38);
+            txtPartNumber.Size = new Size(500, 42);
             txtPartNumber.TabIndex = 9;
             // 
             // txtInspector
             // 
-            txtInspector.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtInspector.Font = new Font("Arial", 16F);
-            txtInspector.Location = new Point(291, 233);
+            txtInspector.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtInspector.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtInspector.Location = new Point(291, 243);
             txtInspector.Name = "txtInspector";
             txtInspector.ReadOnly = true;
-            txtInspector.Size = new Size(500, 38);
+            txtInspector.Size = new Size(500, 42);
             txtInspector.TabIndex = 10;
             // 
             // txtStatus
             // 
-            txtStatus.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStatus.Font = new Font("Arial", 16F);
-            txtStatus.Location = new Point(291, 290);
+            txtStatus.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtStatus.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStatus.Location = new Point(291, 291);
             txtStatus.Name = "txtStatus";
             txtStatus.ReadOnly = true;
-            txtStatus.Size = new Size(500, 38);
+            txtStatus.Size = new Size(500, 42);
             txtStatus.TabIndex = 11;
             // 
             // labelOK
@@ -328,96 +332,40 @@ namespace Result_Scan_Model.View
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32F));
             tableLayoutInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68F));
-            tableLayoutInput.Controls.Add(pictureBox5, 0, 5);
-            tableLayoutInput.Controls.Add(pictureBox6, 0, 4);
-            tableLayoutInput.Controls.Add(pictureBox9, 0, 3);
-            tableLayoutInput.Controls.Add(pictureBox2, 0, 2);
-            tableLayoutInput.Controls.Add(pictureBox3, 0, 1);
+            tableLayoutInput.Controls.Add(pictureBox4, 0, 1);
             tableLayoutInput.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutInput.Controls.Add(cbModelNumber, 2, 1);
             tableLayoutInput.Controls.Add(txtScanPartCode, 2, 0);
-            tableLayoutInput.Controls.Add(txtPartNumberId, 2, 2);
-            tableLayoutInput.Controls.Add(txtPartNumber, 2, 3);
-            tableLayoutInput.Controls.Add(txtInspector, 2, 4);
-            tableLayoutInput.Controls.Add(txtStatus, 2, 5);
             tableLayoutInput.Controls.Add(labelScan, 1, 0);
-            tableLayoutInput.Controls.Add(label3, 1, 1);
-            tableLayoutInput.Controls.Add(lblPartNumberId, 1, 2);
-            tableLayoutInput.Controls.Add(lblPartNumber, 1, 3);
-            tableLayoutInput.Controls.Add(labelInspector, 1, 4);
-            tableLayoutInput.Controls.Add(labelStatus, 1, 5);
+            tableLayoutInput.Controls.Add(pictureBox5, 0, 6);
+            tableLayoutInput.Controls.Add(pictureBox6, 0, 5);
+            tableLayoutInput.Controls.Add(pictureBox9, 0, 4);
+            tableLayoutInput.Controls.Add(pictureBox2, 0, 3);
+            tableLayoutInput.Controls.Add(pictureBox3, 0, 2);
+            tableLayoutInput.Controls.Add(labelStatus, 1, 6);
+            tableLayoutInput.Controls.Add(labelInspector, 1, 5);
+            tableLayoutInput.Controls.Add(lblPartNumber, 1, 4);
+            tableLayoutInput.Controls.Add(lblPartNumberId, 1, 3);
+            tableLayoutInput.Controls.Add(label3, 1, 2);
+            tableLayoutInput.Controls.Add(txtStatus, 2, 6);
+            tableLayoutInput.Controls.Add(txtInspector, 2, 5);
+            tableLayoutInput.Controls.Add(txtPartNumber, 2, 4);
+            tableLayoutInput.Controls.Add(txtPartNumberId, 2, 3);
+            tableLayoutInput.Controls.Add(cbModelNumber, 2, 2);
+            tableLayoutInput.Controls.Add(labelLastScan, 1, 1);
+            tableLayoutInput.Controls.Add(txtLastScan, 2, 1);
             tableLayoutInput.Dock = DockStyle.Fill;
             tableLayoutInput.Location = new Point(3, 3);
             tableLayoutInput.Name = "tableLayoutInput";
-            tableLayoutInput.RowCount = 6;
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutInput.RowCount = 7;
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
+            tableLayoutInput.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2881651F));
             tableLayoutInput.Size = new Size(794, 338);
             tableLayoutInput.TabIndex = 18;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(3, 284);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(44, 47);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 24;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(3, 228);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(44, 43);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 23;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(3, 172);
-            pictureBox9.Margin = new Padding(3, 4, 3, 4);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(44, 42);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 22;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 116);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(44, 43);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 16;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(3, 60);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(44, 43);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 15;
-            pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -426,45 +374,127 @@ namespace Result_Scan_Model.View
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 41);
+            pictureBox1.Size = new Size(44, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
             // txtScanPartCode
             // 
-            txtScanPartCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtScanPartCode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtScanPartCode.CharacterCasing = CharacterCasing.Upper;
-            txtScanPartCode.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtScanPartCode.Location = new Point(291, 8);
+            txtScanPartCode.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtScanPartCode.Location = new Point(291, 3);
             txtScanPartCode.Name = "txtScanPartCode";
             txtScanPartCode.PlaceholderText = "Input Scan";
             txtScanPartCode.ReadOnly = true;
-            txtScanPartCode.Size = new Size(500, 39);
+            txtScanPartCode.Size = new Size(500, 42);
             txtScanPartCode.TabIndex = 1;
             txtScanPartCode.KeyDown += txtScanPartCode_KeyDown;
             // 
-            // txtPartNumberId
+            // pictureBox5
             // 
-            txtPartNumberId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPartNumberId.Font = new Font("Arial", 16F);
-            txtPartNumberId.Location = new Point(291, 121);
-            txtPartNumberId.Name = "txtPartNumberId";
-            txtPartNumberId.ReadOnly = true;
-            txtPartNumberId.Size = new Size(500, 38);
-            txtPartNumberId.TabIndex = 13;
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(3, 292);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(44, 42);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 24;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(3, 244);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(44, 40);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(3, 196);
+            pictureBox9.Margin = new Padding(3, 4, 3, 4);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(44, 40);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 22;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(3, 148);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(44, 40);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(3, 100);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(44, 40);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 15;
+            pictureBox3.TabStop = false;
             // 
             // lblPartNumberId
             // 
             lblPartNumberId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPartNumberId.AutoSize = true;
             lblPartNumberId.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPartNumberId.Location = new Point(53, 112);
+            lblPartNumberId.Location = new Point(53, 144);
             lblPartNumberId.Name = "lblPartNumberId";
-            lblPartNumberId.Size = new Size(232, 56);
+            lblPartNumberId.Size = new Size(232, 48);
             lblPartNumberId.TabIndex = 12;
             lblPartNumberId.Text = "Part Number Id";
             lblPartNumberId.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtPartNumberId
+            // 
+            txtPartNumberId.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPartNumberId.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPartNumberId.Location = new Point(291, 147);
+            txtPartNumberId.Name = "txtPartNumberId";
+            txtPartNumberId.ReadOnly = true;
+            txtPartNumberId.Size = new Size(500, 42);
+            txtPartNumberId.TabIndex = 13;
+            // 
+            // labelLastScan
+            // 
+            labelLastScan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            labelLastScan.AutoSize = true;
+            labelLastScan.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelLastScan.Location = new Point(53, 48);
+            labelLastScan.Name = "labelLastScan";
+            labelLastScan.Size = new Size(232, 48);
+            labelLastScan.TabIndex = 25;
+            labelLastScan.Text = "Last Scan";
+            labelLastScan.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtLastScan
+            // 
+            txtLastScan.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtLastScan.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtLastScan.Location = new Point(291, 51);
+            txtLastScan.Name = "txtLastScan";
+            txtLastScan.ReadOnly = true;
+            txtLastScan.Size = new Size(500, 42);
+            txtLastScan.TabIndex = 26;
             // 
             // tableLayoutOK_NG
             // 
@@ -498,6 +528,18 @@ namespace Result_Scan_Model.View
             labelNG.TabIndex = 16;
             labelNG.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(3, 52);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(44, 40);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 27;
+            pictureBox4.TabStop = false;
+            // 
             // ScanView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -513,13 +555,14 @@ namespace Result_Scan_Model.View
             tableLayoutBtn.ResumeLayout(false);
             tableLayoutInput.ResumeLayout(false);
             tableLayoutInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutOK_NG.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -554,5 +597,8 @@ namespace Result_Scan_Model.View
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox9;
+        private Label labelLastScan;
+        private TextBox txtLastScan;
+        private PictureBox pictureBox4;
     }
 }
